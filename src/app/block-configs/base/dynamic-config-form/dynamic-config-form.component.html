@@ -1,0 +1,9 @@
+<div>
+  <form [formGroup]="form">
+    <div class="my-3 font-bold">Block Settings</div>
+    <div *ngFor="let config of configs" class="form-row">
+      <app-dynamic-config (addItem)="addItem($event)" (removeItem)="removeItem($event)" (fileUpload)="fileUpload($event)" [config]="config"
+                          [form]="form"></app-dynamic-config>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,105 @@
+<div class="bg-white shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
+    <div class="container ml-auto mr-auto flex flex-wrap items-start">
+      <div class="w-full pl-5 lg:pl-2 mb-4 mt-4">
+        <h1 class="text-3xl lg:text-4xl text-gray-700 font-extrabold">
+          Theme for Page
+        </h1>
+      </div>
+      <div class="w-full md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2">
+        <div class="form-group"  [formGroup]="colorForm">
+          <div class="form-group"   formGroupName="colorBackground">
+           Color : <input  formControlName="color" type="color" name="head" value="#e66465">
+           Background : <input  formControlName="background" type="color" name="head" value="#e66465">
+          </div>
+        </div>
+        <div class="bg-gray-400 rounded-lg m-h-64 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300">
+          <div class="rounded-lg p-4 bg-purple-700 flex flex-col">
+            <div>
+              <h5 class="text-white text-2xl font-bold leading-none">
+                Body-Background
+              </h5>
+              <span class="text-xs text-gray-400 leading-none">Save color.</span>
+            </div>
+            <div class="flex items-center">
+              <button
+                (click)="saveBackGround()"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2">
+        <div class="form-group" [formGroup]="colorForm">
+          <div class="form-group"   formGroupName="colorHeader">
+            Color :<input  formControlName="color" type="color" name="head" value="#e66465">
+            Background :<input  formControlName="background" type="color" name="head" value="#e66465">
+          </div>
+        </div>
+        <div class="bg-gray-400 rounded-lg m-h-64 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300">
+          <div class="rounded-lg p-4 bg-purple-700 flex flex-col">
+            <div>
+              <h5 class="text-white text-2xl font-bold leading-none">
+                Header
+              </h5>
+              <span class="text-xs text-gray-400 leading-none">Save color.</span>
+            </div>
+            <div class="flex items-center">
+              <button
+                (click)="saveHeader()"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2">
+        <div class="form-group" [formGroup]="colorForm">
+          <div class="form-group"   formGroupName="colorFooter">
+            Color :<input  formControlName="color" type="color" name="head" value="#e66465">
+            Background :<input  formControlName="background" type="color" name="head" value="#e66465">
+          </div>
+        </div>
+        <div class="bg-gray-400 rounded-lg m-h-64 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300">
+          <div class="rounded-lg p-4 bg-purple-700 flex flex-col">
+            <div>
+              <h5 class="text-white text-2xl font-bold leading-none">
+                Footer
+              </h5>
+              <span class="text-xs text-gray-400 leading-none">Save color.</span>
+            </div>
+            <div class="flex items-center">
+              <button
+                (click)="saveFooter()"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <div class="container ml-auto mr-auto flex flex-wrap items-start">
+    <div class="w-full pl-5 lg:pl-2 mb-4 mt-4">
+      <h1 class="text-3xl lg:text-4xl text-gray-700 font-extrabold">
+        Change Logo for Site
+      </h1>
+      <div [formGroup]="logoForm">
+        <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Site name</label>
+        <input formControlName="logoName" type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+      </div>
+    </div>
+    <div class="w-full md:w-1/2 lg:w-1/4 pl-5 pr-5 mb-5 lg:pl-2 lg:pr-2">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload file</label>
+      <input (change)="this.onFileChange($event)" class="form-control" type="file" id="formFile" class="block w-96 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
+      <button
+        (click)="this.upload()"
+        class="mt-6 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Save
+      </button>
+    </div>
+  </div>
+</div>
+

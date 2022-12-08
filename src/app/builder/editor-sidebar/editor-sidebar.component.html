@@ -1,0 +1,77 @@
+<div class="w-full h-full max-w-sm p-4 bg-white border-l-2">
+  <ng-container *ngIf="!selectedBlock; else elseBlock">
+    <h5 class="mb-3 text-base font-semibold text-gray-900 md:text-xl dark:text-white">
+      Block Structure
+    </h5>
+    <p class="text-sm font-normal text-gray-500 dark:text-gray-400">This is the current page structure, click a block to
+      configure it.</p>
+    <ul [sortablejsOptions]="sortableOptions" [sortablejs]="blocks" class="my-4 space-y-3">
+      <li (click)="setSelectedBlock(block)" *ngFor="let block of blocks; let i = index;">
+        <div
+          class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
+        >
+          <span class="flex-1 ml-3 whitespace-nowrap truncate">{{block.title}}</span>
+          <span
+            class="inline-flex items-center justify-center px-2 py-0.5 ml-3 text-xs font-medium text-gray-500 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400">Edit</span>
+        </div>
+      </li>
+    </ul>
+    <!-- drawer init and toggle -->
+    <div class="text-center">
+      <button
+        (click)="toggleDrawer()"
+        aria-controls="drawer-right-example"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+        type="button">
+        Add Block
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-template #elseBlock>
+    <button
+      (click)="setSelectedBlock(null)"
+      class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+      type="button">
+      Back
+    </button>
+    <app-editor-block-config [blockConfig]="selectedBlockConfig" [block]="selectedBlock"></app-editor-block-config>
+  </ng-template>
+</div>
+
+<div [ngClass]="!showDrawer ? 'translate-x-full':'transform-none'" aria-labelledby="drawer-right-label"
+     class="fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-gray-800 transition-transform right-0 top-0"
+     tabindex="-1">
+  <h5 class="inline-flex items-center mb-4 text-base font-semibold text-gray-500 dark:text-gray-400"
+      id="drawer-right-label">
+    <svg aria-hidden="true" class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"
+         xmlns="http://www.w3.org/2000/svg">
+      <path clip-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            fill-rule="evenodd"></path>
+    </svg>
+    Available blocks
+  </h5>
+  <button (click)="toggleDrawer()"
+          aria-controls="drawer-right-example"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+          type="button">
+    <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path clip-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            fill-rule="evenodd"></path>
+    </svg>
+    <span class="sr-only">Close menu</span>
+  </button>
+
+  <ul class="my-4 space-y-3">
+    <li (click)="addBlock(block.type)" *ngFor="let block of availableBlocks">
+      <div
+        class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white"
+      >
+        <span class="flex-1 ml-3 whitespace-nowrap">{{block.title}}</span>
+      </div>
+    </li>
+  </ul>
+</div>
+

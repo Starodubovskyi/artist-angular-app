@@ -1,0 +1,89 @@
+<div [formGroup]="form">
+  <div [ngSwitch]="config.controlType">
+    <div *ngSwitchCase="'input'">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{config.label}}</label>
+      <input
+        [formControlName]="config.key"
+        class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        type="text"
+      >
+    </div>
+    <div *ngSwitchCase="'textarea'">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{config.label}}</label>
+      <quill-editor
+        [formControlName]="config.key"
+        class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" format="json"></quill-editor>
+    </div>
+    <div *ngSwitchCase="'switch'">
+      <label class="inline-flex relative items-center mb-4 cursor-pointer mt-3">
+        <input [formControlName]="config.key" class="sr-only peer" type="checkbox" value="">
+        <div
+          class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+        <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">{{config.label}}</span>
+      </label>
+    </div>
+    <div *ngSwitchCase="'file'">
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{config.label}}</label>
+      <input (change)="triggerFileUpload($event, config.key)"
+             class="block w-full mb-5 text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+             type="file">
+    </div>
+    <div *ngSwitchCase="'items'">
+      <div class="justify-between flex items-center mt-3">
+        <div class="my-3 font-bold">Items List</div>
+        <div>
+          <button
+            (click)="triggerAddItem()"
+            aria-controls="drawer-right-example"
+            class="text-white bg-blue-700 hover:bg-blue-800  rounded-lg text-xs p-2"
+            type="button">
+            Add Item
+          </button>
+        </div>
+      </div>
+      <div *ngFor="let item of form.controls.items.controls; let i = index;" formArrayName="items">
+        <div [formGroupName]="i">
+          <div class="flex justify-between items-center my-3">
+            <span>Item {{i + 1}}</span>
+            <button
+              (click)="triggerRemoveItem(i)"
+              class="text-white bg-red-700 hover:bg-red-800  rounded-lg text-xs p-2"
+              type="button">
+              Remove
+            </button>
+          </div>
+          <div *ngFor="let itemConfig of config.configs" [ngSwitch]="itemConfig.controlType">
+            <div *ngSwitchCase="'input'">
+              <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{item.label}}</label>
+              <input
+                [formControlName]="itemConfig.key"
+                class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                type="text"
+              >
+            </div>
+            <div *ngSwitchCase="'textarea'">
+              <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{item.label}}</label>
+              <quill-editor
+                [formControlName]="itemConfig.key"
+                class="block w-full" format="json"></quill-editor>
+            </div>
+            <div *ngSwitchCase="'switch'">
+              <label class="inline-flex relative items-center mb-4 cursor-pointer mt-3">
+                <input [formControlName]="itemConfig.key" class="sr-only peer" type="checkbox" value="">
+                <div
+                  class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">{{item.label}}</span>
+              </label>
+            </div>
+            <div *ngSwitchCase="'file'">
+              <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{itemConfig.label}}</label>
+              <input (change)="triggerFileUpload($event, itemConfig.key,true, i)"
+                     class="block w-full mb-5 text-xs text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                     type="file">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

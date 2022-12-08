@@ -1,0 +1,8 @@
+<ng-container *ngIf="!!blocks.length; else elseBlock">
+  <ng-container *ngFor="let block of blocks">
+    <ng-template *appBlockItemRender="block"></ng-template>
+  </ng-container>
+</ng-container>
+<ng-template #elseBlock>
+  <h1 class="text-5xl">There are no blocks added!</h1>
+</ng-template>

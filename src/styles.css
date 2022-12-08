@@ -1,0 +1,21 @@
+@import '~@circlon/angular-tree-component/css/angular-tree-component.css';
+@import '~quill/dist/quill.snow.css';
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.ql-container {
+  height: auto;
+  width: auto;
+}
+
+.ql-editor {
+  padding: 0px;
+}
+
+.custom-tree .node-content-wrapper {
+  box-shadow: none;
+  border: 0;
+}

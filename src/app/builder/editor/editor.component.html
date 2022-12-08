@@ -1,0 +1,19 @@
+<div
+  class="flex items-center justify-between p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-100 group"
+>
+  <a [routerLink]="['/admin/pages', pageId, 'edit']" class="ml-3 whitespace-nowrap w-auto"> < back</a>
+  <h1 class="text-xl">{{pageTitle}}</h1>
+  <button
+    (click)="savePage()"
+    class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" type="button">
+    Save
+  </button>
+</div>
+<div class="flex">
+  <div class="grow px-5 pt-5">
+    <app-blocks-container [blocks]="blocks"></app-blocks-container>
+  </div>
+  <div class="flex-none w-96 h-100">
+    <app-editor-sidebar (addBlock)="addBlock($event)" [blocks]="blocks"></app-editor-sidebar>
+  </div>
+</div>
