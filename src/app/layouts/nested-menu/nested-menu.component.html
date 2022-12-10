@@ -1,0 +1,23 @@
+<ul class="flex items-center gap-3">
+  <ng-container *ngTemplateOutlet="recursiveMenu; context:{ $implicit: menus, isFirstLevel: true, width: 150 }">
+  </ng-container>
+</ul>
+
+<ng-template #recursiveMenu let-isFirstLevel="isFirstLevel" let-width="width" let-menus>
+  <li *ngFor="let menu of menus" class="menuItem relative">
+    <ng-container *ngIf="menu.label">
+      <a [routerLink]="menu.slug" class="hover:underline p-2 block">{{menu.label}}</a>
+      <ng-container *ngIf="menu.children">
+        <div [id]="menu.label"
+             [style]="'width:' + width + 'px;right:' + (isFirstLevel ? 0:width) + 'px'"
+             [ngClass]="{'top-0': !isFirstLevel}"
+             class="nested-menu absolute z-10 bg-header-bg hidden">
+          <ul class="text-sm text-header-color">
+            <ng-container
+              *ngTemplateOutlet="recursiveMenu; context:{ $implicit: menu.children, width: width }"></ng-container>
+          </ul>
+        </div>
+      </ng-container>
+    </ng-container>
+  </li>
+</ng-template>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 import {ConfigBase} from "../../base/config-base";
 import {ConfigInput} from "../../base/config-input";
@@ -17,8 +17,8 @@ export class FeatureV3ConfigComponent {
     title: 'Feature V3',
     items: [
       {
-        title:'Shooting Stars',
-        content:'Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard ugh iceland kickstarter tumblr live-edge tilde.',
+        title: 'Shooting Stars',
+        content: 'Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard ugh iceland kickstarter tumblr live-edge tilde.',
         textLink: 'First Link',
         link: '/first-link'
       }
@@ -34,20 +34,21 @@ export class FeatureV3ConfigComponent {
         label: 'Title',
         value: this.data.title
       }),
+      new ConfigFile({
+        key: "image",
+        label: "Image"
+      }),
       new ConfigItems({
         key: "items",
         value: this.data.items,
         defaultValues: {
-          title:"Shooting Stars",
-          content:'Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard ugh iceland kickstarter tumblr live-edge tilde.',
+          title: "Shooting Stars",
+          content: 'Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard ugh iceland kickstarter tumblr live-edge tilde.',
           textLink: 'First Link',
           link: '/first-link'
         },
         configs: [
-          new ConfigFile({
-            key: "image",
-            label: "Image"
-          }),
+
           new ConfigInput({
             key: "title",
             label: "Title",

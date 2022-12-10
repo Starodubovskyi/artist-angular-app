@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {TextBlockComponent} from './text-block/text-block.component';
 import {ImageBlockComponent} from './image-block/image-block.component';
 import {BlocksMappingService} from "./blocks-mapping.service";
@@ -76,12 +76,13 @@ import {FormsModule} from "@angular/forms";
     TestimonialsBlockV3Component,
     HeroImageFullBlockComponent,
   ],
-  imports: [
-    CommonModule,
-    QuillModule,
-    RouterLink,
-    FormsModule
-  ],
+    imports: [
+        CommonModule,
+        QuillModule,
+        RouterLink,
+        FormsModule,
+        NgOptimizedImage
+    ],
   exports: [
     TextBlockComponent,
     ImageBlockComponent,

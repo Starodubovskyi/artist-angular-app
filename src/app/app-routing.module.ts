@@ -16,14 +16,17 @@ const routes: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('./client/client.module').then((m) => m.ClientModule)
+    loadChildren: () => import('./client/client.module').then((m) => m.ClientModule),
+    data: {
+      bodyClass: 'client-theme'
+    }
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     initialNavigation: 'enabledBlocking'
-})],
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

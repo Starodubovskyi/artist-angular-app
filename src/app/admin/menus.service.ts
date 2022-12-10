@@ -44,7 +44,7 @@ export class MenusService {
   getMenuBySlug(path: string) {
     return this.http.get<PublicMenuPage>(environment.apiUrl + '/v1/menu/public/menu-item', {
       params: {
-        slug: path.slice(1)
+        slug: path
       },
       headers: {
         "ngrok-skip-browser-warning": "any",

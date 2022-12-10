@@ -1,0 +1,8 @@
+.theme-colors label {
+  width: 200px;
+  display: inline-block;
+}
+
+.color-group{
+  @apply flex items-center;
+}

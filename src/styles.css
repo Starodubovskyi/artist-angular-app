@@ -1,6 +1,7 @@
 @import '~@circlon/angular-tree-component/css/angular-tree-component.css';
 @import 'quill/dist/quill.core.css';
 @import '~quill/dist/quill.snow.css';
+
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
@@ -19,4 +20,31 @@
 .custom-tree .node-content-wrapper {
   box-shadow: none;
   border: 0;
+}
+
+:root {
+  --body-background: #fff;
+  --body-color: #000;
+
+  --header-background: #fff;
+  --header-color: #000;
+
+  --footer-background: #fff;
+  --footer-color: #000;
+}
+
+/*client side theme*/
+.client-theme {
+  background: var(--body-background);
+  color: var(--body-color);
+}
+
+.client-theme .footer {
+  background: var(--footer-background);
+  color: var(--footer-color);
+}
+
+.client-theme .header {
+  background: var(--header-background);
+  color: var(--header-color);
 }

@@ -1,0 +1,3 @@
+li.menuItem:hover > .nested-menu {
+  display: block;
+}

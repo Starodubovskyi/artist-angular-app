@@ -4,13 +4,12 @@ import {DOCUMENT} from "@angular/common";
 import {lastValueFrom} from "rxjs";
 import * as tinycolor from 'tinycolor2';
 import {environment} from "../../environments/environment";
-import {Color, ThemeColors, ThemeSettings} from "./theme-settings";
+import {BodyColors, Color, FooterColors, HeaderThemeSettings, ThemeColors, ThemeSettings} from "./theme-settings";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeSettingsService {
-
   constructor(private http: HttpClient, @Inject(DOCUMENT) private document: Document) {
   }
 
@@ -32,7 +31,20 @@ export class ThemeSettingsService {
 
   loadTheme(): Promise<any> {
     return lastValueFrom(this.getSettings()).then((theme) => {
-      this.updateThemeVariables(theme.colors ?? {}, this.document);
+      this.updateThemeVariables(theme.colors ?? {}, {
+        body: {
+          background: theme.body.background,
+          color: theme.body.color
+        },
+        footer: {
+          background: theme.footer.background,
+          color: theme.footer.color
+        },
+        header: {
+          background: theme.header.background,
+          color: theme.header.color
+        }
+      }, this.document);
     });
   }
 
@@ -61,13 +73,25 @@ export class ThemeSettingsService {
     };
   }
 
-  private updateThemeVariables(colors: ThemeColors, document: Document) {
+  private updateThemeVariables(
+    colors: ThemeColors,
+    other: { body: BodyColors, header: { color: string, background: string }, footer: FooterColors },
+    document: Document
+  ) {
     let styleString = '';
+
+    console.log(colors);
 
     for (const [name, color] of Object.entries(colors)) {
       const palette = this.computeColorPalette(color);
       for (const variant of palette) {
         styleString += `--${name}-${variant.name}: ${variant.hex};`;
+      }
+    }
+
+    for (const [pageSection, colorObj] of Object.entries(other)) {
+      for (const [colorName, color] of Object.entries(colorObj)) {
+        styleString += `--${pageSection}-${colorName}: ${color};`;
       }
     }
 

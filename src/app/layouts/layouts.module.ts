@@ -11,6 +11,7 @@ import { HeaderV3Component } from './header/header-v3/header-v3.component';
 import { HeaderV4Component } from './header/header-v4/header-v4.component';
 import { HeaderV5Component } from './header/header-v5/header-v5.component';
 import {RouterLink} from "@angular/router";
+import { NestedMenuComponent } from './nested-menu/nested-menu.component';
 
 
 
@@ -25,7 +26,8 @@ import {RouterLink} from "@angular/router";
         HeaderV2Component,
         HeaderV3Component,
         HeaderV4Component,
-        HeaderV5Component
+        HeaderV5Component,
+        NestedMenuComponent
     ],
   exports: [
     FooterV1Component,
