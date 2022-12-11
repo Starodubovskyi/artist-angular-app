@@ -1,5 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {ThemeSettingsService} from "../../theme-settings/theme-settings.service";
 
 @Component({
   selector: 'app-nested-menu',
@@ -10,7 +9,7 @@ export class NestedMenuComponent {
 
   @Input() menus: any[] = [];
 
-  constructor(private themeSettings: ThemeSettingsService) {
+  constructor() {
   }
 
   ngOnInit() {

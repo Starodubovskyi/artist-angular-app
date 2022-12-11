@@ -32,7 +32,6 @@ export class EditorComponent implements OnInit, OnDestroy {
 
     this.configWatcher = this.blocksConfigEditingService.configWatcher.subscribe((config) => {
       this.blocks = this.blocks.map((block) => {
-        console.log({config})
         if (!config || block.id !== config.id) {
           return block;
         }

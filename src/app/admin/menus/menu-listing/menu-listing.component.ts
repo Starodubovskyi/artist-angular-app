@@ -117,7 +117,6 @@ export class MenuListingComponent implements OnInit, AfterViewInit {
       footerMenu: this.footerMenuNodes,
       mainMenu: this.mainMenuNodes
     }).subscribe(() => {
-      console.log("save menu");
     });
   }
 }

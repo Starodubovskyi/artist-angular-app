@@ -59,11 +59,11 @@ export class DynamicConfigFormComponent implements OnInit {
 
       uploadReq.subscribe((response) => {
 
-        formItem.controls[key].setValue(response.name);
+        formItem.controls[key].setValue(response.path);
       });
     } else {
       uploadReq.subscribe(response => {
-        this.form.controls[key].setValue(response.name);
+        this.form.controls[key].setValue(response.path);
       });
     }
   }

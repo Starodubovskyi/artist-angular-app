@@ -10,14 +10,6 @@ export class MediaService {
   constructor(private http: HttpClient) {
   }
 
-  public getImagePath(path: string) {
-    if (!path) {
-      return null;
-    }
-
-    return environment.apiUrl + '/v1/images/' + path;
-  }
-
   saveMedia(file: File): Observable<any> {
     const formData = new FormData();
 

@@ -18,10 +18,6 @@ export class DynamicConfigComponent {
     return this.form.controls[this.config.key].valid;
   }
 
-  ngOnInit() {
-    console.log(this.config, this.form);
-  }
-
   triggerAddItem() {
     this.addItem.emit(this.config.key);
   }

@@ -12,7 +12,7 @@
             <h1 class="title-font text-xl font-medium text-gray-900 mb-3">{{item.title}}</h1>
             <quill-view  class="leading-relaxed mb-5"[content]="item.content" format="json"></quill-view>
             <a class="inline-flex items-center">
-              <img alt="blog" [src]="getImagePath(item.avatarImage)" class="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center">
+              <img alt="blog" [src]="item.avatarImage" class="w-8 h-8 rounded-full flex-shrink-0 object-cover object-center">
               <span class="flex-grow flex flex-col pl-3">
                 <span class="title-font font-medium text-gray-900">{{item.name}}</span>
               </span>

@@ -11,8 +11,4 @@ export class StepBlockV1Component {
 
   constructor(private mediaService: MediaService) {
   }
-
-  getImagePath(path: string) {
-    return this.mediaService.getImagePath(path);
-  }
 }

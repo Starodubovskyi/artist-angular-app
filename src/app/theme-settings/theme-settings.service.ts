@@ -80,8 +80,6 @@ export class ThemeSettingsService {
   ) {
     let styleString = '';
 
-    console.log(colors);
-
     for (const [name, color] of Object.entries(colors)) {
       const palette = this.computeColorPalette(color);
       for (const variant of palette) {

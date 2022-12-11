@@ -11,8 +11,4 @@ export class BlogBlockV3Component {
 
   constructor(private mediaService: MediaService) {
   }
-
-  getImagePath(path: string) {
-    return this.mediaService.getImagePath(path);
-  }
 }
