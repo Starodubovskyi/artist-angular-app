@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar-dashboard',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -15,6 +16,6 @@ export class NavbarDashboardComponent implements OnInit {
     localStorage.removeItem("token");
     localStorage.removeItem("expires_at");
     localStorage.removeItem("user");
-    window.location.reload();
+    this.router.navigate(['/auth/login'])
   }
 }
