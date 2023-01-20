@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {MediaService} from "../../media/media.service";
 
 @Component({
   selector: 'app-feature-block-v3',
@@ -8,7 +7,4 @@ import {MediaService} from "../../media/media.service";
 })
 export class FeatureBlockV3Component {
   data: any = {};
-
-  constructor(private mediaService: MediaService) {
-  }
 }

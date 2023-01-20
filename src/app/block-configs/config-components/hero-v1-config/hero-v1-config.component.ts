@@ -44,6 +44,7 @@ export class HeroV1ConfigComponent {
       }),
       new ConfigFile({
         key: "image",
+        value:this.data.image,
         label: "Image"
       }),
       new ConfigItems({

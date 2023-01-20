@@ -32,10 +32,11 @@ import {TestimonialsV1ConfigComponent} from "./config-components/testimonials-v1
 import {TestimonialsV2ConfigComponent} from "./config-components/testimonials-v2-config/testimonials-v2-config.component";
 import {TestimonialsV3ConfigComponent} from "./config-components/testimonials-v3-config/testimonials-v3-config.component";
 import {ContentV6ConfigComponent} from "./config-components/content-v6-config/content-v6-config.component";
-import {HeroImageFullBlockComponent} from "../blocks/hero-image-full-block/hero-image-full-block.component";
 import {
   HeroImageFullConfigComponent
 } from "./config-components/hero-image-full-config/hero-image-full-config.component";
+import {ImageBlockConfigComponent} from "./config-components/image-block-config/image-block-config.component";
+import {ContentV7ConfigComponent} from "./config-components/content-v7-config/content-v7-config.component";
 
 @Injectable({
   providedIn: 'root'
@@ -85,6 +86,8 @@ export class BlockConfigsMappingService {
         return ContentV5ConfigComponent;
       case BlockTypes.CONTENT_V6:
         return ContentV6ConfigComponent;
+      case BlockTypes.CONTENT_V7:
+        return ContentV7ConfigComponent;
       case BlockTypes.FEATURE_V1:
         return FeatureV1ConfigComponent;
       case BlockTypes.FEATURE_V2:
@@ -125,6 +128,8 @@ export class BlockConfigsMappingService {
         return TestimonialsV2ConfigComponent;
       case BlockTypes.TESTIMONIALS_V3:
         return TestimonialsV3ConfigComponent;
+      case BlockTypes.IMAGE:
+        return ImageBlockConfigComponent;
       default:
         return TextBlockConfigComponent;
     }

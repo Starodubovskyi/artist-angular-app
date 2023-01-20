@@ -35,6 +35,7 @@ export class StepV1ConfigComponent{
       }),
       new ConfigFile({
         key: "image",
+        value:this.data.image,
         label: "Image"
       }),
       new ConfigItems({

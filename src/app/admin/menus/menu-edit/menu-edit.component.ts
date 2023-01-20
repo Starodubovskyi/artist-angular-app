@@ -59,10 +59,17 @@ export class MenuEditComponent implements OnInit, OnDestroy {
   }
 
   saveMenu() {
+    console.log(this.menuEditForm.value)
     this.menuService.updateMenu(this.menuId, {
       ...this.menuEditForm.value,
       pages: this.menuEditForm.value.pages?.map((page: any) => page.id)
     }).subscribe(() => {
     });
+  }
+  onSelect(event: any) {
+    console.log(event);
+  }
+  onDeSelect(event: any) {
+    console.log(event);
   }
 }

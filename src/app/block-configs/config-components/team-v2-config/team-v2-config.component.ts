@@ -56,6 +56,7 @@ export class TeamV2ConfigComponent {
         configs: [
           new ConfigFile({
             key: "image",
+            value:this.data.image,
             label: "Image"
           }),
           new ConfigInput({

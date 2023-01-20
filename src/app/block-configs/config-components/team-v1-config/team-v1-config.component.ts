@@ -37,7 +37,7 @@ export class TeamV1ConfigComponent {
       new ConfigInput({
         key: "titleContent",
         label: 'Title Block',
-        value: this.data.titleBlock
+        value: this.data.titleContent
       }),
       new ConfigTextarea({
         key: "content",
@@ -55,6 +55,7 @@ export class TeamV1ConfigComponent {
         configs: [
           new ConfigFile({
             key: "image",
+            value:this.data.image,
             label: "Image"
           }),
           new ConfigInput({

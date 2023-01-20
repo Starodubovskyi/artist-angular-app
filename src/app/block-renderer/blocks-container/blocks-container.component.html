@@ -1,6 +1,8 @@
 <ng-container *ngIf="!!blocks.length; else elseBlock">
   <ng-container *ngFor="let block of blocks">
-    <ng-template *appBlockItemRender="block"></ng-template>
+    <div [id]="block.id">
+      <ng-template *appBlockItemRender="block"></ng-template>
+    </div>
   </ng-container>
 </ng-container>
 <ng-template #elseBlock>

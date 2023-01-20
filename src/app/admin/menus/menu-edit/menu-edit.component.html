@@ -26,6 +26,8 @@
         [data]="pageList"
         [placeholder]="'Pages'"
         [settings]="dropdownSettings"
+        (onDeSelect)="onSelect($event)"
+      >
       >
       </ng-multiselect-dropdown>
     </form>

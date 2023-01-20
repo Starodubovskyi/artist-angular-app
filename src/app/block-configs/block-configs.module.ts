@@ -45,6 +45,7 @@ import { DynamicConfigComponent } from './base/dynamic-config/dynamic-config.com
 import { DynamicConfigFormComponent } from './base/dynamic-config-form/dynamic-config-form.component';
 import {QuillModule} from "ngx-quill";
 import { HeroImageFullConfigComponent } from './config-components/hero-image-full-config/hero-image-full-config.component';
+import { ContentV7ConfigComponent } from './config-components/content-v7-config/content-v7-config.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { HeroImageFullConfigComponent } from './config-components/hero-image-ful
     ContentV4ConfigComponent,
     ContentV5ConfigComponent,
     ContentV6ConfigComponent,
+    ContentV7ConfigComponent,
     FeatureV1ConfigComponent,
     FeatureV2ConfigComponent,
     FeatureV3ConfigComponent,
@@ -85,6 +87,7 @@ import { HeroImageFullConfigComponent } from './config-components/hero-image-ful
     DynamicConfigComponent,
     DynamicConfigFormComponent,
     HeroImageFullConfigComponent,
+    ContentV7ConfigComponent,
   ],
   exports: [
     BlockConfigRenderDirective

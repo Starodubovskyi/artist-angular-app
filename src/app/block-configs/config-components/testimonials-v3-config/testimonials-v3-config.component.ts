@@ -57,6 +57,7 @@ export class TestimonialsV3ConfigComponent implements OnInit, BlockConfigCompone
           }),
           new ConfigFile({
             key: "image",
+            value:this.data.image,
             label: "Image"
           }),
         ]

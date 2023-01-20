@@ -18,10 +18,7 @@ export class PageEditComponent implements OnInit, OnDestroy {
 
   pageEditForm = new FormGroup({
     title: new FormControl<string>('', [Validators.email, Validators.required]),
-    tags: new FormArray([new FormGroup({
-      name: new FormControl<string | null>(''),
-      value: new FormControl<string | null>('')
-    })])
+    tags: new FormArray([])
   });
 
   private sub: any;
@@ -38,25 +35,15 @@ export class PageEditComponent implements OnInit, OnDestroy {
           });
 
           if (Array.isArray(page.tags)) {
-            page.tags.forEach((tag, index) => {
-              if (!tag) {
-                return;
-              }
+            this.pagesService.getTags().subscribe((tags) => {
+              tags.forEach(tag => {
+                const foundTag = page.tags.find((tg) => tg.name === tag);
 
-              const foundControl = this.pageEditForm.controls.tags.at(index);
-
-              if (!foundControl) {
-                return this.pageEditForm.controls.tags.push(new FormGroup({
-                  name: new FormControl(tag.name),
-                  value: new FormControl(tag.value)
+                this.pageEditForm.controls.tags.push(new FormGroup({
+                  name: new FormControl(tag),
+                  value: new FormControl(foundTag ? foundTag.value : ''),
                 }));
-              }
-
-              foundControl.patchValue({
-                name: tag.name,
-                value: tag.value
               })
-
             });
           }
 

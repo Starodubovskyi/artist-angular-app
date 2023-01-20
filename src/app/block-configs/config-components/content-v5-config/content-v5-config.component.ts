@@ -34,7 +34,7 @@ export class ContentV5ConfigComponent implements OnInit, BlockConfigComponent {
         label: 'Title',
         value: this.data.title
       }),
-      new ConfigTextarea({
+      new ConfigInput({
         key: "name",
         label: 'Name',
         value: this.data.name

@@ -3,15 +3,15 @@
     <div class="flex flex-wrap -m-12">
       <div class="p-12 md:w-1/2 flex flex-col items-start" *ngFor="let item of data.items">
         <span
-          class="inline-block py-1 px-2 rounded bg-indigo-50 text-indigo-500 text-xs font-medium tracking-widest">{{item.secondaryText}}</span>
+          class="inline-block py-1 px-2 rounded bg-indigo-50 bg-body-color-200 text-xs font-medium tracking-widest">{{item.secondaryText}}</span>
         <h2 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">{{item.title}}</h2>
-        <quill-view  class="leading-relaxed mb-8" [content]="item.content" format="json"></quill-view>
+        <quill-view class="leading-relaxed mb-8" [content]="item.content" format="json"></quill-view>
         <div class="flex items-center flex-wrap pb-4 mb-4 border-b-2 border-gray-100 mt-auto w-full">
-          <a [routerLink]="[item.link]" class="text-indigo-500 inline-flex items-center">{{item.linkText}}
+          <a [routerLink]="[item.link]" class="text-primary-color inline-flex items-center">{{item.linkText}}
           </a>
         </div>
         <a class="inline-flex items-center">
-          <img alt="Avatar Image" [src]="item.avatarImage"
+          <img alt="Avatar Image" [src]="item.avatarImage ? item.avatarImage :'https://dummyimage.com/104x104'"
                class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
           <span class="flex-grow flex flex-col pl-4">
             <span class="title-font font-medium text-gray-900">{{item.name}}</span>

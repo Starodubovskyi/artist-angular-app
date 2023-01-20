@@ -40,4 +40,12 @@ export class PagesService {
   createPage(data: any) {
     return this.http.post(environment.apiUrl + '/v1/pages/manage-pages/', data);
   }
+
+  getTags() {
+    return this.http.get<any[]>(environment.apiUrl + '/v1/pages/manage-tags/', {
+      headers: {
+        "ngrok-skip-browser-warning": "any",
+      }
+    });
+  }
 }

@@ -17,7 +17,6 @@ export class BlogV1ConfigComponent implements OnInit, BlockConfigComponent {
     items: [
       {
         title: "The Catalyzer",
-        secondaryText: "CATEGORY",
         content: 'Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.'
       }
     ]
@@ -25,8 +24,6 @@ export class BlogV1ConfigComponent implements OnInit, BlockConfigComponent {
   data: any = {}
   configs: ConfigBase<any>[] = [];
 
-  constructor() {
-  }
 
   ngOnInit(): void {
     this.configs = [
@@ -40,7 +37,6 @@ export class BlogV1ConfigComponent implements OnInit, BlockConfigComponent {
         value: this.data.items,
         defaultValues:   {
           title: "The Catalyzer",
-          secondaryText: "CATEGORY",
           content: 'Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.'
         },
         configs: [
@@ -48,16 +44,13 @@ export class BlogV1ConfigComponent implements OnInit, BlockConfigComponent {
             key: "title",
             label: "Title",
           }),
-          new ConfigInput({
-            key: "secondaryText",
-            label: "Secondary text",
-          }),
           new ConfigTextarea({
             key: "content",
             label: "Content"
           }),
           new ConfigFile({
             key: "image",
+            value:this.data.image,
             label: "Image"
           })
         ]

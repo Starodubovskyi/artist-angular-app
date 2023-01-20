@@ -42,6 +42,7 @@ export class HeroV3ConfigComponent {
       }),
       new ConfigFile({
         key: "image",
+        value:this.data.image,
         label: "Image"
       }), new ConfigInput({
         key: "textRightButton",

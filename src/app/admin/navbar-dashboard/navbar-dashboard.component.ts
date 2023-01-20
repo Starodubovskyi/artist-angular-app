@@ -11,5 +11,10 @@ export class NavbarDashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  logout() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("expires_at");
+    localStorage.removeItem("user");
+    window.location.reload();
+  }
 }

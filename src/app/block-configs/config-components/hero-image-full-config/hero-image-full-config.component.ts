@@ -26,6 +26,7 @@ export class HeroImageFullConfigComponent  {
       }),
       new ConfigFile({
         key: "image",
+        value:this.data.image,
         label: "Image"
       }),
     ];

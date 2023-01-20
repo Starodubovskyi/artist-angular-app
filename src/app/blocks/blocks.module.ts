@@ -38,6 +38,7 @@ import {QuillModule} from "ngx-quill";
 import {RouterLink} from "@angular/router";
 import { HeroImageFullBlockComponent } from './hero-image-full-block/hero-image-full-block.component';
 import {FormsModule} from "@angular/forms";
+import { ContentBlockV7Component } from './content-block-v7/content-block-v7.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import {FormsModule} from "@angular/forms";
     TestimonialsBlockV2Component,
     TestimonialsBlockV3Component,
     HeroImageFullBlockComponent,
+    ContentBlockV7Component,
   ],
     imports: [
         CommonModule,

@@ -74,8 +74,8 @@ export class ThemeSettingsService {
   }
 
   private updateThemeVariables(
-    colors: ThemeColors,
-    other: { body: BodyColors, header: { color: string, background: string }, footer: FooterColors },
+    colors: ThemeColors | {},
+    other: { body: BodyColors; header: { color: string; background: string }; footer: FooterColors },
     document: Document
   ) {
     let styleString = '';

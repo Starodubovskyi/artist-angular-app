@@ -12,16 +12,25 @@ export class PageCreateComponent implements OnInit {
 
   pageCreateForm = new FormGroup({
     title: new FormControl<string>('', [Validators.email, Validators.required]),
-    tags: new FormArray([new FormGroup({
-      name: new FormControl<string | null>(''),
-      value: new FormControl<string | null>('')
-    })])
+    tags: new FormArray([]),
+    // new FormGroup({
+    //   name: new FormControl<string | null>(''),
+    //   value: new FormControl<string | null>('')
+    // })
   });
 
   constructor(private router: Router, private pagesService: PagesService) {
   }
 
   ngOnInit(): void {
+    this.pagesService.getTags().subscribe((tags) => {
+      tags.forEach(tag => {
+        this.pageCreateForm.controls.tags.push(new FormGroup({
+          name: new FormControl(tag),
+          value: new FormControl(''),
+        }));
+      })
+    });
   }
 
   addTag() {

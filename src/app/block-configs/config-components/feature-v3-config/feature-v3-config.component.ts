@@ -15,6 +15,7 @@ import {ConfigFile} from "../../base/config-file";
 export class FeatureV3ConfigComponent {
   static config: any = {
     title: 'Feature V3',
+    image: '',
     items: [
       {
         title: 'Shooting Stars',
@@ -36,6 +37,7 @@ export class FeatureV3ConfigComponent {
       }),
       new ConfigFile({
         key: "image",
+        value: this.data.image,
         label: "Image"
       }),
       new ConfigItems({

@@ -57,7 +57,8 @@ export class GalleryV3ConfigComponent implements OnInit, BlockConfigComponent {
         configs: [
           new ConfigFile({
             key: "image",
-            label: "Image"
+            label: "Image",
+            value:this.data.image,
           }),
           new ConfigInput({
             key: "subtitle",

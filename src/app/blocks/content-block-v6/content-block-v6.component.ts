@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import {MediaService} from "../../media/media.service";
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-content-block-v6',
@@ -9,6 +8,6 @@ import {MediaService} from "../../media/media.service";
 export class ContentBlockV6Component {
   data: any = {};
 
-  constructor(private mediaService: MediaService) {
+  constructor() {
   }
 }

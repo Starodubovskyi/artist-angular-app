@@ -24,7 +24,6 @@ export class EditorBlockConfigComponent implements OnInit {
       block: this.currentBlock
     }
   }
-
   removeBlock() {
     this.blockConfigEditingService.blockRemoveObservable.next(this.currentBlock?.id);
   }
