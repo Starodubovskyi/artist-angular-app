@@ -1,4 +1,4 @@
-import {Directive, Injector, Input, ViewContainerRef} from '@angular/core';
+import {Directive, Input, ViewContainerRef} from '@angular/core';
 import {Block, BlockComponent} from "../blocks/block.interface";
 
 @Directive({

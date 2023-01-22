@@ -64,16 +64,15 @@ export class PageEditComponent implements OnInit, OnDestroy {
     }));
   }
 
-  removeTag(index: number) {
-    this.pageEditForm.controls.tags.removeAt(index);
-  }
-
   savePage(): boolean | void {
     if (!this.pageId) {
       return false;
     }
 
-    this.pagesService.updatePage(this.pageId, this.pageEditForm.value).subscribe(() => {
+    this.pagesService.updatePage(this.pageId, {
+      ...this.pageEditForm.value,
+      tags: this.pageEditForm.value.tags.filter((tag) => !!tag.name)
+    }).subscribe(() => {
       this.showToast = true;
     });
   }

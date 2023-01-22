@@ -15,8 +15,9 @@ export class EditorComponent implements OnInit, OnDestroy {
   @Input('blocks') initialBlocks: Block[] = [];
   @Input('pageTitle') pageTitle: string = '';
   @Input('pageId') pageId: string = '';
-
+  @Input('singleBlockMode') singleBlockMode: boolean = false;
   @Output('save') saveEmitter = new EventEmitter();
+  @Output('onBack') backEmitter = new EventEmitter();
 
   blocks: Block[] = [];
 
@@ -61,6 +62,10 @@ export class EditorComponent implements OnInit, OnDestroy {
   }
 
   addBlock(type: BlockTypes) {
+    if (this.singleBlockMode && this.blocks.length) {
+      return null;
+    }
+
     this.blocks = [...this.blocks, {
       id: nanoid(),
       type,
@@ -71,5 +76,9 @@ export class EditorComponent implements OnInit, OnDestroy {
 
   savePage() {
     this.saveEmitter.emit(this.blocks);
+  }
+
+  goBack() {
+    this.backEmitter.emit();
   }
 }

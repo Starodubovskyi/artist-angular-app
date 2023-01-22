@@ -4,7 +4,13 @@ import {DOCUMENT} from "@angular/common";
 import {lastValueFrom} from "rxjs";
 import * as tinycolor from 'tinycolor2';
 import {environment} from "../../environments/environment";
-import {BodyColors, Color, FooterColors, HeaderThemeSettings, ThemeColors, ThemeSettings} from "./theme-settings";
+import {
+  BodyColors,
+  Color,
+  FooterThemeSettings,
+  ThemeColors,
+  ThemeSettings
+} from "./theme-settings";
 
 @Injectable({
   providedIn: 'root'
@@ -75,7 +81,7 @@ export class ThemeSettingsService {
 
   private updateThemeVariables(
     colors: ThemeColors | {},
-    other: { body: BodyColors; header: { color: string; background: string }; footer: FooterColors },
+    other: { body: BodyColors; header: { color: string; background: string }; footer: FooterThemeSettings },
     document: Document
   ) {
     let styleString = '';

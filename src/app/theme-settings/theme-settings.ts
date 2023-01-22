@@ -12,7 +12,7 @@ export interface ThemeSettings {
   colors: ThemeColors;
   body: BodyColors;
   header: HeaderThemeSettings;
-  footer: FooterColors;
+  footer: FooterThemeSettings;
   siteName: string;
 }
 
@@ -37,11 +37,15 @@ export interface HeaderThemeSettings {
   color: string;
   background: string;
 
-  fixed: boolean
+  fixed: boolean;
+
+  variant: string;
 }
 
-export interface FooterColors {
+export interface FooterThemeSettings {
   color: string;
   background: string;
 
+  variant?: string;
 }
+

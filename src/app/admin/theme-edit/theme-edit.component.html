@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="w-full">
-      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload file</label>
+      <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload Logo</label>
       <input (change)="onFileChange($event)" type="file" id="formFile"
              class="form-control block w-96 text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400">
     </div>
@@ -25,17 +25,17 @@
           <label>Primary:</label>
           <input formControlName="primary" type="color" name="head"
                  value="#e66465">
-          {{themeForm.controls.colors.controls.primary.value}}
+          <span>{{themeForm.controls.colors.controls.primary.value}}</span>
         </div>
         <div class="color-group">
           <label>Secondary:</label>
           <input formControlName="secondary" type="color" name="head" value="#e66465">
-          {{themeForm.controls.colors.controls.secondary.value}}
+          <span>{{themeForm.controls.colors.controls.secondary.value}}</span>
         </div>
         <div class="color-group">
           <label>Accent:</label>
           <input formControlName="accent" type="color" name="head" value="#e66465">
-          {{themeForm.controls.colors.controls.accent.value}}
+          <span>{{themeForm.controls.colors.controls.accent.value}}</span>
         </div>
       </div>
     </div>
@@ -46,12 +46,12 @@
       <div class="color-group">
         <label>Color:</label>
         <input formControlName="color" type="color" name="head" value="#e66465">
-        {{themeForm.controls.body.controls.color.value}}
+        <span>{{themeForm.controls.body.controls.color.value}}</span>
       </div>
       <div class="color-group">
         <label>Background:</label>
         <input formControlName="background" type="color" name="head" value="#e66465">
-        {{themeForm.controls.body.controls.background.value}}
+        <span>{{themeForm.controls.body.controls.background.value}}</span>
       </div>
     </div>
     <div class="w-full mb-5" formGroupName="header">
@@ -61,12 +61,12 @@
       <div class="color-group">
         <label>Color:</label>
         <input formControlName="color" type="color" name="head" value="#e66465">
-        {{themeForm.controls.header.controls.color.value}}
+        <span>{{themeForm.controls.header.controls.color.value}}</span>
       </div>
       <div class="color-group">
         <label>Background:</label>
         <input formControlName="background" type="color" name="head" value="#e66465">
-        {{themeForm.controls.header.controls.background.value}}
+        <span>{{themeForm.controls.header.controls.background.value}}</span>
       </div>
       <div class="flex items-center mb-4">
         <label for="header-fixed" class="text-sm font-medium text-gray-900 dark:text-gray-300">Fixed</label>
@@ -77,69 +77,69 @@
         <label class="text-sm font-medium text-gray-900 dark:text-gray-300">Header Template</label>
         <div class='flex-col '>
           <div class=" w-1/3 h-1/3 flex mt-1">
-            <input type="radio" formControlName="variant" name="header" value="0"
+            <input type="radio" formControlName="variant"  value="0"
                    class="mt-[50px]	mr-[20px] justify-center items-center  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
             <img src="./assets/images-headers/Header-V1.png" alt="header">
           </div>
           <div class="w-1/3 h-1/3 flex mt-1">
-            <input type="radio" formControlName="variant" name="header" value="1"
+            <input type="radio" formControlName="variant"  value="1"
                    class="mt-[50px]	mr-[20px] justify-center items-center  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
             <img src="./assets/images-headers/Header-V2.png" alt="header">
           </div>
           <div class="w-1/3 h-1/3  flex mt-1">
-            <input type="radio" formControlName="variant" name="header" value="2"
+            <input type="radio" formControlName="variant"  value="2"
                    class="mt-[50px]	mr-[20px] justify-center items-center  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
             <img src="./assets/images-headers/Header-V3.png" alt="header">
           </div>
           <div class="w-1/3 h-1/3  flex mt-1">
-            <input type="radio" formControlName="variant" name="header" value="3"
+            <input type="radio" formControlName="variant"  value="3"
                    class="mt-[50px]	mr-[20px] justify-center items-center  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
             <img src="./assets/images-headers/Header-V4.png" alt="header">
           </div>
         </div>
       </div>
-      <div class="w-full" formGroupName="footer">
-        <h1 class="text-4xl text-gray-700 font-bold">
-          Footer
-        </h1>
-        <div class="color-group">
-          <label>Color:</label>
-          <input formControlName="color" type="color" name="head" value="#e66465">
-          {{themeForm.controls.footer.controls.color.value}}
-        </div>
-        <div class="color-group">
-          <label>Background:</label>
-          <input formControlName="background" type="color" name="head" value="#e66465">
-          {{themeForm.controls.footer.controls.background.value}}
-        </div>
-        <div class="flex items-center mb-4">
-          <label class="text-sm font-medium text-gray-900 dark:text-gray-300">Footer Template</label>
-          <div class='flex-col '>
-            <div class="w-1/3 h-1/3 flex mt-1">
-              <input type="radio" formControlName="variant" name="footer" value="0"
-                     class="mt-[50px]	mr-[20px] justify-center items-center  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <img src="./assets/images-footers/Footer-V1.png" alt="footer">
-            </div>
-            <div class="w-1/3 h-1/3 flex mt-1">
-              <input type="radio" formControlName="variant" name="footer" value="1"
-                     class="mt-[50px]	mr-[20px] justify-center items-center  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <img src="./assets/images-footers/Footer-V2.png" alt="footer">
-            </div>
-            <div class="w-1/3 h-1/3 flex mt-1">
-              <input type="radio" formControlName="variant" name="footer" value="2"
-                     class="mt-[50px]	mr-[20px] justify-center items-center  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <img src="./assets/images-footers/Footer-V3.png" alt="footer">
-            </div>
-            <div class="w-1/3 h-1/4 flex mt-1">
-              <input type="radio" formControlName="variant" name="footer" value="3"
-                     class="mt-[50px]	mr-[20px] justify-center items-center  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <img src="./assets/images-footers/Footer-V4.png" alt="footer">
-            </div>
-            <div class="w-1/3 h-1/3 flex mt-1">
-              <input type="radio" formControlName="variant" name="footer" value="4"
-                     class="mt-[50px]	mr-[20px] justify-center items-center  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              <img src="./assets/images-footers/Footer-V5.png">
-            </div>
+    </div>
+    <div class="w-full" formGroupName="footer">
+      <h1 class="text-4xl text-gray-700 font-bold">
+        Footer
+      </h1>
+      <div class="color-group">
+        <label>Color:</label>
+        <input formControlName="color" type="color" name="head" value="#e66465">
+        <span>{{themeForm.controls.footer.controls.color.value}}</span>
+      </div>
+      <div class="color-group">
+        <label>Background:</label>
+        <input formControlName="background" type="color" name="head" value="#e66465">
+        <span>{{themeForm.controls.footer.controls.background.value}}</span>
+      </div>
+      <div class="flex items-center mb-4">
+        <label class="text-sm font-medium text-gray-900 dark:text-gray-300">Footer Template</label>
+        <div class='flex-col '>
+          <div class="w-1/3 h-1/3 flex mt-1">
+            <input type="radio" formControlName="variant" value="0"
+                   class="mt-[50px]	mr-[20px] justify-center items-center  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <img src="./assets/images-footers/Footer-V1.png" alt="footer">
+          </div>
+          <div class="w-1/3 h-1/3 flex mt-1">
+            <input type="radio" formControlName="variant" value="1"
+                   class="mt-[50px]	mr-[20px] justify-center items-center  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <img src="./assets/images-footers/Footer-V2.png" alt="footer">
+          </div>
+          <div class="w-1/3 h-1/3 flex mt-1">
+            <input type="radio" formControlName="variant" value="2"
+                   class="mt-[50px]	mr-[20px] justify-center items-center  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <img src="./assets/images-footers/Footer-V3.png" alt="footer">
+          </div>
+          <div class="w-1/3 h-1/4 flex mt-1">
+            <input type="radio" formControlName="variant" value="3"
+                   class="mt-[50px]	mr-[20px] justify-center items-center  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <img src="./assets/images-footers/Footer-V4.png" alt="footer">
+          </div>
+          <div class="w-1/3 h-1/3 flex mt-1">
+            <input type="radio" formControlName="variant" value="4"
+                   class="mt-[50px]	mr-[20px] justify-center items-center  w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <img src="./assets/images-footers/Footer-V5.png">
           </div>
         </div>
       </div>

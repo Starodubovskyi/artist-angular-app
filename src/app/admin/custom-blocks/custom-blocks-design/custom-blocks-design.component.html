@@ -1,0 +1,5 @@
+<div *ngIf="block && block.name">
+  <app-editor (save)="onSaveTrigger($event)" (onBack)="backToCustomBlock()" [blocks]="block.config ? [block.config]:[]" [pageId]="block._id"
+              [pageTitle]="block.name" [singleBlockMode]="true"></app-editor>
+</div>
+

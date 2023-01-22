@@ -7,6 +7,12 @@ export interface Block {
   title?: string
 }
 
+export interface CustomBlock {
+  _id: string;
+  name: string;
+  config?: Block
+}
+
 export interface TextBlock extends Block {
   description?: string
 }

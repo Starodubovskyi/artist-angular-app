@@ -1,5 +1,5 @@
 <div *ngIf="page && page.title">
-  <app-editor (save)="onSaveTrigger($event)" [blocks]="blocks" [pageId]="page._id"
+  <app-editor (save)="onSaveTrigger($event)" (onBack)="onBack()" [blocks]="blocks" [pageId]="page._id"
               [pageTitle]="page.title"></app-editor>
 </div>
 

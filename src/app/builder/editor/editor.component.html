@@ -1,7 +1,7 @@
 <div
   class="flex z-10 fixed right-0 left-0 items-center justify-between p-3 text-base font-bold text-footer-color rounded-lg bg-gray-100 group"
 >
-  <a [routerLink]="['/admin/pages', pageId, 'edit']" class="ml-3 whitespace-nowrap w-auto text-black "> < Back</a>
+  <button (click)="goBack()" class="ml-3 whitespace-nowrap w-auto text-black"> < back</button>
   <h1 class="text-xl">{{pageTitle}}</h1>
   <button
     (click)="savePage()"
@@ -13,10 +13,8 @@
   <div class="grow px-5 pt-5">
     <app-blocks-container [blocks]="blocks"></app-blocks-container>
   </div>
-  <div class="flex flex-none w-96">
-
-  </div>
+  <div class="flex flex-none w-96"></div>
   <div class="fixed z-10 overflow-auto right-0 top-[68px] flex-none w-96 h-[calc(100vh-68px)]">
-    <app-editor-sidebar (addBlock)="addBlock($event)" [blocks]="blocks"></app-editor-sidebar>
+    <app-editor-sidebar (addBlock)="addBlock($event)" [blocks]="blocks" [singleBlockMode]="singleBlockMode"></app-editor-sidebar>
   </div>
 </div>

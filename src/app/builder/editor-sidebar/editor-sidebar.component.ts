@@ -15,6 +15,7 @@ import {DOCUMENT} from "@angular/common";
 export class EditorSidebarComponent implements OnInit {
 
   @Input() blocks: Block[] = [];
+  @Input() singleBlockMode: boolean = false;
   @Output('addBlock') addBlockEventEmitter = new EventEmitter();
 
   selectedBlock: Block | null = null;

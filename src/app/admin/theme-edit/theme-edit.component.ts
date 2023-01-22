@@ -31,12 +31,12 @@ export class ThemeEditComponent implements OnInit {
       color: new FormControl(''),
       background: new FormControl<string | null>(''),
       fixed: new FormControl<boolean>(false),
-      variantheader: new FormControl<string>('0'),
+      variant: new FormControl<string>('0'),
     }),
     footer: new FormGroup({
       color: new FormControl<string | null>(''),
       background: new FormControl<string | null>(''),
-      variantfooter: new FormControl<string>('0'),
+      variant: new FormControl<string>('0'),
     })
   });
 
@@ -56,7 +56,6 @@ export class ThemeEditComponent implements OnInit {
 
   fetchThemeSettings() {
     this.themeService.getSettings().subscribe((response: any) => {
-      console.log(response, 'response')
       this.themeForm.patchValue({
         ...response
       });
@@ -72,7 +71,7 @@ export class ThemeEditComponent implements OnInit {
 
     this.mediaService.saveMedia(this.logo).subscribe(resp => {
       this.themeForm.patchValue({
-        siteLogo: resp.name,
+        siteLogo: resp.path,
       });
 
       this.themeService.saveSettings(this.themeForm.value).subscribe(() => {

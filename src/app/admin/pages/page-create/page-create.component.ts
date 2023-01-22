@@ -40,10 +40,6 @@ export class PageCreateComponent implements OnInit {
     }));
   }
 
-  removeTag(index: number) {
-    this.pageCreateForm.controls.tags.removeAt(index);
-  }
-
   savePage(): boolean | void {
     this.pagesService.createPage(this.pageCreateForm.value).subscribe(() => {
       this.router.navigate(['/admin/pages']);

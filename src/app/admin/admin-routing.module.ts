@@ -9,6 +9,10 @@ import {MenuListingComponent} from "./menus/menu-listing/menu-listing.component"
 import {MenuCreateComponent} from "./menus/menu-create/menu-create.component";
 import {MenuEditComponent} from "./menus/menu-edit/menu-edit.component";
 import {ThemeEditComponent} from "./theme-edit/theme-edit.component";
+import {CustomBlocksListComponent} from "./custom-blocks/custom-blocks-list/custom-blocks-list.component";
+import {CustomBlocksCreateComponent} from "./custom-blocks/custom-blocks-create/custom-blocks-create.component";
+import {CustomBlocksEditComponent} from "./custom-blocks/custom-blocks-edit/custom-blocks-edit.component";
+import {CustomBlocksDesignComponent} from "./custom-blocks/custom-blocks-design/custom-blocks-design.component";
 
 const routes: Routes = [
   {
@@ -49,13 +53,33 @@ const routes: Routes = [
         title: 'Theme',
         path: 'theme',
         component: ThemeEditComponent
-      }
+      },
+      {
+        title: 'Custom blocks',
+        path: 'custom-blocks',
+        component: CustomBlocksListComponent
+      },
+      {
+        title: 'Custom blocks create',
+        path: 'custom-blocks/create',
+        component: CustomBlocksCreateComponent
+      },
+      {
+        title: 'Custom blocks edit',
+        path: 'custom-blocks/:id/edit',
+        component: CustomBlocksEditComponent
+      },
     ]
   },
   {
     title: 'Page block edit',
     path: 'pages/:id/design',
     component: PageBlockEditComponent
+  },
+  {
+    title: 'Custom blocks design',
+    path: 'custom-blocks/:id/design',
+    component: CustomBlocksDesignComponent
   }
 ];
 

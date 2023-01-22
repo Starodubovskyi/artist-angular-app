@@ -25,7 +25,7 @@ export class PageBlockEditComponent implements OnInit, OnDestroy {
     this.sub = this.route.params.subscribe((params) => {
 
       if (!params['id']) {
-        return this.router.navigate(['/admin/pages'])
+        return this.router.navigate(['/admin/pages']);
       }
 
       return this.pagesService.getPageById(params['id']).subscribe(
@@ -60,5 +60,9 @@ export class PageBlockEditComponent implements OnInit, OnDestroy {
     }).subscribe(() => {
       this.showToast = true;
     });
+  }
+
+  onBack() {
+    this.router.navigate(['/admin/pages', this.page._id, 'edit']);
   }
 }

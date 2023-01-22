@@ -17,7 +17,7 @@
       </li>
     </ul>
     <!-- drawer init and toggle -->
-    <div class="text-center">
+    <div class="text-center" *ngIf="(singleBlockMode && !blocks.length) || !singleBlockMode">
       <button
         (click)="toggleDrawer()"
         aria-controls="drawer-right-example"

@@ -1,5 +1,5 @@
-<app-header-v1 [themeSettings]="themeSettings"></app-header-v1>
+<ng-template *appLayoutRender="currentHeader"></ng-template>
 
 <app-blocks-container [blocks]="blocks" *ngIf="loaded"></app-blocks-container>
 
-<app-footer-v5 [themeSettings]="themeSettings"></app-footer-v5>
+<ng-template *appLayoutRender="currentFooter"></ng-template>
