@@ -26,7 +26,7 @@ export class PageCreateComponent implements OnInit {
     this.pagesService.getTags().subscribe((tags) => {
       tags.forEach(tag => {
         this.pageCreateForm.controls.tags.push(new FormGroup({
-          name: new FormControl(tag),
+          name: new FormControl({value: tag, disabled: true}),
           value: new FormControl(''),
         }));
       })
@@ -41,7 +41,11 @@ export class PageCreateComponent implements OnInit {
   }
 
   savePage(): boolean | void {
-    this.pagesService.createPage(this.pageCreateForm.value).subscribe(() => {
+    this.pagesService.createPage({
+      ...this.pageCreateForm.value,
+      tags: this.pageCreateForm.value.tags
+        .filter((tag) => !!tag.name)
+    }).subscribe(() => {
       this.router.navigate(['/admin/pages']);
     });
   }

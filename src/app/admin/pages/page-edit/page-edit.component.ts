@@ -40,7 +40,7 @@ export class PageEditComponent implements OnInit, OnDestroy {
                 const foundTag = page.tags.find((tg) => tg.name === tag);
 
                 this.pageEditForm.controls.tags.push(new FormGroup({
-                  name: new FormControl(tag),
+                  name: new FormControl({value: tag, disabled: true}),
                   value: new FormControl(foundTag ? foundTag.value : ''),
                 }));
               })
@@ -59,7 +59,7 @@ export class PageEditComponent implements OnInit, OnDestroy {
 
   addTag() {
     this.pageEditForm.controls.tags.push(new FormGroup({
-      name: new FormControl(''),
+      name: new FormControl({value: '', disabled: false}),
       value: new FormControl(''),
     }));
   }
@@ -71,7 +71,8 @@ export class PageEditComponent implements OnInit, OnDestroy {
 
     this.pagesService.updatePage(this.pageId, {
       ...this.pageEditForm.value,
-      tags: this.pageEditForm.value.tags.filter((tag) => !!tag.name)
+      tags: this.pageEditForm.value.tags
+        .filter((tag) => !!tag.name)
     }).subscribe(() => {
       this.showToast = true;
     });
