@@ -39,6 +39,11 @@ export class ContentV5ConfigComponent implements OnInit, BlockConfigComponent {
         label: 'Name',
         value: this.data.name
       }),
+      new ConfigFile({
+        key: "avatarImage",
+        label: "Image Avatar",
+        value: this.data.avatarImage
+      }),
       new ConfigInput({
         key: "secondaryText",
         label: 'Secondary Text',

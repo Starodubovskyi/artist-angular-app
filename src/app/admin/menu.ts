@@ -5,10 +5,15 @@ export interface Menu {
   public: boolean;
   label: string;
   slug: string;
+  keywords:string;
+  description:string;
   pages: string[];
+  isSystem: boolean;
+  image: string;
 }
 
 export interface PublicMenuPage {
   slug: string;
-  blocks: Block[]
+  blocks?: Block[]
+  response?: any[]
 }

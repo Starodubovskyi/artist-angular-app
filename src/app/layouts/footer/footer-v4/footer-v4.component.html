@@ -1,8 +1,14 @@
 
-<footer class="p-4 bg-footer-bg rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
-    <span class="text-sm text-footer-color sm:text-center dark:text-gray-400"  *ngIf="themeSettings && themeSettings.siteName">
+<footer class="p-4 bg-footer-bg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+  <a [routerLink]="['/']" class="flex-col sm:flex-row">
+  <img   alt="team" class=" w-24 h-24 m-auto sm:object-position:center sm:m-0 " *ngIf="themeSettings && themeSettings.siteLogo; else siteName"
+       [src]="themeSettings.siteLogo">
+    <ng-template #siteName>
+    <a class="text-sm text-footer-color text-center sm:text-center dark:text-gray-400"  *ngIf="themeSettings && themeSettings.siteName">
       {{themeSettings.siteName}}
-    </span>
+    </a>
+    </ng-template>
+  </a>
   <ul class="flex flex-wrap items-center mt-3 text-sm text-footer-color dark:text-gray-400 sm:mt-0" *ngFor="let menuItem of menu; let i = index;">
     <li>
       <a class="mr-4 hover:underline md:mr-6" [routerLink]="[menuItem.slug]">{{menuItem.label}}</a>

@@ -14,17 +14,11 @@ export class MenusService {
 
   getAll() {
     return this.http.get<Menu[]>(environment.apiUrl + '/v1/menu/manage-menu', {
-      headers: {
-        "ngrok-skip-browser-warning": "any",
-      }
     });
   }
 
   getMenuById(menuId: string) {
     return this.http.get<Menu>(environment.apiUrl + '/v1/menu/manage-menu/' + menuId, {
-      headers: {
-        "ngrok-skip-browser-warning": "any",
-      }
     });
   }
 
@@ -45,9 +39,6 @@ export class MenusService {
     return this.http.get<PublicMenuPage>(environment.apiUrl + '/v1/menu/public/menu-item', {
       params: {
         slug: path
-      },
-      headers: {
-        "ngrok-skip-browser-warning": "any",
       }
     });
   }

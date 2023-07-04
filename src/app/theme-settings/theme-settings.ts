@@ -14,6 +14,7 @@ export interface ThemeSettings {
   header: HeaderThemeSettings;
   footer: FooterThemeSettings;
   siteName: string;
+  siteLogo:string;
 }
 
 export interface Color {

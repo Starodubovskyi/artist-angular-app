@@ -46,7 +46,7 @@ export class PageCreateComponent implements OnInit {
       tags: this.pageCreateForm.value.tags
         .filter((tag) => !!tag.name)
     }).subscribe(() => {
-      this.router.navigate(['/admin/pages']);
+      this.router.navigate(['/admin/sections']);
     });
   }
 }

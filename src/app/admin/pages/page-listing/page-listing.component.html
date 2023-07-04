@@ -2,16 +2,8 @@
   <div class="bg-white p-8 rounded-md w-full">
     <div class=" flex items-center justify-between pb-6">
       <div>
-        <h2 class="text-gray-600 font-semibold">Pages</h2>
-        <span class="text-xs">All pages</span>
-      </div>
-      <div class="flex items-center justify-between">
-        <div class="lg:ml-40 ml-10 space-x-8">
-          <a
-            class="bg-indigo-600 px-4 py-2 rounded-md text-white font-semibold tracking-wide cursor-pointer"
-            routerLink="/admin/pages/create">Create
-          </a>
-        </div>
+        <h2 class="text-gray-600 font-semibold">Sections</h2>
+        <span class="text-xs">All sections</span>
       </div>
     </div>
     <div>
@@ -42,15 +34,15 @@
                 </div>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm flex flex-row ">
-                <a [routerLink]="['/admin/pages', page._id, 'edit']"
+                <a [routerLink]="['/admin/sections', page._id, 'edit']"
                    class="mr-2 py-2 px-3 text-xs font-medium text-center text-white bg-gray-700 rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                    type="button">Edit</a>
-                <button
-                  (click)="toDeletePageId = page._id"
-                  class="py-2 px-3 text-xs font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-                  type="button">
-                  Delete
-                </button>
+<!--                <button-->
+<!--                  (click)="toDeletePageId = page._id"-->
+<!--                  class="py-2 px-3 text-xs font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"-->
+<!--                  type="button">-->
+<!--                  Delete-->
+<!--                </button>-->
               </td>
             </tr>
             </tbody>
@@ -102,7 +94,7 @@
                 stroke-width="2"></path>
         </svg>
         <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you
-          want to delete this page?</h3>
+          want to delete this section?</h3>
         <button
           (click)="deletePage()"
           class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"

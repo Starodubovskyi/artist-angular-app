@@ -20,7 +20,7 @@ export class EditorComponent implements OnInit, OnDestroy {
   @Output('onBack') backEmitter = new EventEmitter();
 
   blocks: Block[] = [];
-
+  extendEditor:boolean
   private configWatcher: any;
   private blockRemoveWatcher: any;
   private blockSortWatcher: any;
@@ -28,6 +28,9 @@ export class EditorComponent implements OnInit, OnDestroy {
   constructor(private blockConfigsMappingService: BlockConfigsMappingService, private blocksConfigEditingService: BlockConfigEditingService) {
   }
 
+  setShowEditorSidebar(event){
+    this.extendEditor = event
+  }
   ngOnInit(): void {
     this.blocks = this.initialBlocks;
 

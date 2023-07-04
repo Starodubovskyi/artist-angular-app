@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {PagesService} from "../../pages.service";
 import {MenusService} from "../../menus.service";
 import {ActivatedRoute} from "@angular/router";
+import {MediaService} from "../../../media/media.service";
 
 @Component({
   selector: 'app-menu-edit',
@@ -14,11 +15,12 @@ export class MenuEditComponent implements OnInit, OnDestroy {
   menuEditForm = new FormGroup({
     label: new FormControl<string>('', [Validators.required]),
     slug: new FormControl<string>('', [Validators.required, Validators.pattern(/^[a-zA-Z0-9 _@\-^!#$%&+={}./\\\[\]]+\.[a-zA-Z0-9]+$/)]),
+    keywords: new FormControl<string>('', [Validators.required]),
+    description: new FormControl<string>('', [Validators.required]),
     public: new FormControl<boolean>(false),
-    pages: new FormControl([]),
+    image: new FormControl<string>('')
   });
 
-  pageList: any = [];
   selectedPages: string[] = [];
   dropdownSettings = {
     singleSelection: false,
@@ -27,29 +29,30 @@ export class MenuEditComponent implements OnInit, OnDestroy {
 
   menuId: string = '';
 
+  image: File | undefined;
+
+  isSystem: boolean = false;
+
   private sub: any;
 
-  constructor(private route: ActivatedRoute, private pagesService: PagesService, private menuService: MenusService) {
+  constructor(private route: ActivatedRoute, private pagesService: PagesService, private menuService: MenusService, private mediaService: MediaService) {
   }
 
   ngOnInit(): void {
-    this.pagesService.getAll().subscribe((response) => {
-      this.pageList = response.map(item => ({
-        id: item._id,
-        text: item.title
-      }));
+    this.sub = this.route.params.subscribe((params) => {
+      this.menuId = params['id'];
 
-      this.sub = this.route.params.subscribe((params) => {
-        this.menuId = params['id'];
-
-        this.menuService.getMenuById(params['id']).subscribe((currentMenuItem) => {
-          this.menuEditForm.patchValue({
-            label: currentMenuItem.label,
-            slug: currentMenuItem.slug,
-            public: currentMenuItem.public,
-            pages: this.pageList.filter((page: any) => currentMenuItem.pages.includes(page.id))
-          });
+      this.menuService.getMenuById(params['id']).subscribe((currentMenuItem) => {
+        this.menuEditForm.patchValue({
+          label: currentMenuItem.label,
+          slug: currentMenuItem.slug,
+          keywords: currentMenuItem.keywords,
+          description: currentMenuItem.description,
+          public: currentMenuItem.public,
+          image: currentMenuItem.image
         });
+
+        this.isSystem = !!currentMenuItem.isSystem;
       });
     });
   }
@@ -59,17 +62,26 @@ export class MenuEditComponent implements OnInit, OnDestroy {
   }
 
   saveMenu() {
-    console.log(this.menuEditForm.value)
-    this.menuService.updateMenu(this.menuId, {
-      ...this.menuEditForm.value,
-      pages: this.menuEditForm.value.pages?.map((page: any) => page.id)
-    }).subscribe(() => {
+    if (!this.image) {
+      this.menuService.updateMenu(this.menuId, {
+        ...this.menuEditForm.value
+      }).subscribe(() => {
+      });
+    }
+
+    return this.mediaService.saveMedia(this.image).subscribe(resp => {
+      this.menuEditForm.patchValue({
+        image: resp.path,
+      });
+
+      this.menuService.updateMenu(this.menuId, {
+        ...this.menuEditForm.value
+      }).subscribe(() => {
+      });
     });
   }
-  onSelect(event: any) {
-    console.log(event);
-  }
-  onDeSelect(event: any) {
-    console.log(event);
+
+  onFileChange(event: any) {
+    this.image = event.target.files[0]
   }
 }

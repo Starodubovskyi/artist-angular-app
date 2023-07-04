@@ -1,5 +1,18 @@
-<ng-template *appLayoutRender="currentHeader"></ng-template>
+<app-blocks-container [blocks]="blocks" *ngIf="loaded && !isListing"></app-blocks-container>
 
-<app-blocks-container [blocks]="blocks" *ngIf="loaded"></app-blocks-container>
-
-<ng-template *appLayoutRender="currentFooter"></ng-template>
+<div *ngIf="loaded && list.length">
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4" >
+        <div class="p-4 md:w-1/3 sm:mb-0 mb-6" *ngFor="let item of list">
+          <div class="rounded-lg h-64 overflow-hidden">
+            <img alt="content" class="object-cover object-center h-full w-full" [src]="item.frontImagePartialUrl">
+          </div>
+          <h2 class="text-xl font-medium title-font text-gray-900 mt-5">{{item.name}}</h2>
+          <p class="text-base leading-relaxed mt-2 truncate">{{item.shortDescription}}</p>
+          <a class="text-indigo-500 inline-flex items-center mt-3" [routerLink]="['/opera', item.artworkId]">Dettagli</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

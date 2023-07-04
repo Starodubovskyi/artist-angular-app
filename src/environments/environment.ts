@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://505c-2a02-2f0e-cb12-8800-a600-cfc1-a502-59ea.eu.ngrok.io'
+  // apiUrl: 'https://artist-express-api.onrender.com'
+  apiUrl: 'https://4091-5-13-130-104.eu.ngrok.io'
 };
 
 /*

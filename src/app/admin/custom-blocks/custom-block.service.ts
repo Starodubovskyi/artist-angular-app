@@ -22,9 +22,6 @@ export class CustomBlockService {
 
   getBlockById(blockId: string) {
     return this.http.get<{name: string, _id: string, config: any}>(environment.apiUrl + '/v1/custom-blocks/' + blockId, {
-      headers: {
-        "ngrok-skip-browser-warning": "any",
-      }
     });
   }
 

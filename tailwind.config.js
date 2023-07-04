@@ -5,9 +5,6 @@ module.exports = {
     "./node_modules/flowbite/**/*.js"
   ],
   theme: {
-    fontSize: {
-      'xs': '.75rem'
-    },
     extend: {
       colors: {
         'primary-color': {

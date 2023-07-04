@@ -1,6 +1,8 @@
 <footer class="text-footer-color body-font bg-footer-bg">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
+      <img [routerLink]="['/']"  alt="team" class="cursor-pointer w-24 h-24 m-auto sm:object-position:center sm:m-0 " *ngIf="themeSettings && themeSettings.siteLogo"
+           [src]="themeSettings.siteLogo">
       <div class="lg:w-1/6 md:w-1/2 w-full px-4" *ngFor="let menuItem of menu; let i = index;">
         <h2 class="title-font font-medium text-footer-color tracking-widest text-sm mb-3" [routerLink]="[menuItem.slug]">{{menuItem.label}}</h2>
         <nav class="list-none mb-10">
@@ -12,9 +14,12 @@
     </div>
   </div>
   <div class="bg-gray-100">
-    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-      <p class="text-gray-500 text-sm text-center sm:text-left" *ngIf="themeSettings && themeSettings.siteName">{{themeSettings.siteName}}</p>
-<!--      <span class="sm:ml-auto sm:mt-0 mt-2 sm:w-auto w-full sm:text-left text-center text-gray-500 text-sm">Enamel pin tousled raclette tacos irony</span>-->
+    <div  class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <img [routerLink]="['/']"  alt="team" class=" cursor-pointer w-8 h-8 object-position: center" *ngIf="themeSettings && themeSettings.siteLogo; else siteName"
+           [src]="themeSettings.siteLogo">
+      <ng-template #siteName>
+      <a [routerLink]="['/']" class="text-gray-500 text-sm text-center sm:text-left" *ngIf="themeSettings && themeSettings.siteName">{{themeSettings.siteName}}</a>
+      </ng-template>
     </div>
   </div>
 </footer>

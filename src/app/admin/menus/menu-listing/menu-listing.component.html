@@ -42,22 +42,11 @@
                 </div>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm flex flex-row ">
-                <button
-                  (click)="addToMainMenu(menu)"
-                  class="mr-2 py-2 px-3 text-xs font-medium text-center text-white bg-gray-700 rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-                  type="button">
-                  Add to main
-                </button>
-                <button
-                  (click)="addToFooterMenu(menu)"
-                  class="mr-2 py-2 px-3 text-xs font-medium text-center text-white bg-gray-700 rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-                  type="button">
-                  Add to footer
-                </button>
                 <a [routerLink]="['/admin/menus', menu._id, 'edit']"
                    class="mr-2 py-2 px-3 text-xs font-medium text-center text-white bg-gray-700 rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                    type="button">Edit</a>
                 <button
+                  *ngIf="!menu.isSystem"
                   (click)="toDeleteMenuId = menu._id"
                   class="py-2 px-3 text-xs font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
                   type="button">
@@ -71,56 +60,6 @@
       </div>
     </div>
   </div>
-</div>
-
-
-<div class="bg-white shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4 ">
-  <div class="custom-tree">
-    <p class="text-2xl">Main Menu</p>
-    <tree-root #mainTree [nodes]="mainMenuNodes" [options]="options">
-      <ng-template #treeNodeTemplate let-index="index" let-node>
-        <div
-          class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-          <span>{{ node.data.id }}</span>
-          <button
-            (click)="deleteNode(node, mainTree)"
-            class="ml-3 py-2 px-3 text-xs font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-            type="button">
-            Delete
-          </button>
-        </div>
-      </ng-template>
-    </tree-root>
-  </div>
-</div>
-
-<div class="bg-white shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4 ">
-  <div class="custom-tree">
-    <p class="text-2xl">Footer Menu</p>
-    <tree-root #footerTree [nodes]="footerMenuNodes" [options]="options">
-      <ng-template #treeNodeTemplate let-index="index" let-node>
-        <div
-          class="flex items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
-          <span>{{ node.data.id }}</span>
-          <button
-            (click)="deleteNode(node, footerTree, false)"
-            class="ml-3 py-2 px-3 text-xs font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-            type="button">
-            Delete
-          </button>
-        </div>
-      </ng-template>
-    </tree-root>
-  </div>
-</div>
-
-<div class="bg-white shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4 ">
-  <p class="text-2xl">Actions</p>
-  <button
-    (click)="saveMenu()"
-    class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" type="button">
-    Save order
-  </button>
 </div>
 
 <div [ngClass]="{hidden: !toDeleteMenuId}" class="absolute top-0 left-0 bg-black h-full w-full bg-opacity-5"

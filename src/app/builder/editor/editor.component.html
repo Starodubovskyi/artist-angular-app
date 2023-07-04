@@ -14,7 +14,9 @@
     <app-blocks-container [blocks]="blocks"></app-blocks-container>
   </div>
   <div class="flex flex-none w-96"></div>
-  <div class="fixed z-10 overflow-auto right-0 top-[68px] flex-none w-96 h-[calc(100vh-68px)]">
-    <app-editor-sidebar (addBlock)="addBlock($event)" [blocks]="blocks" [singleBlockMode]="singleBlockMode"></app-editor-sidebar>
+  <div class="fixed z-10 overflow-auto right-0  top-[68px] flex-none  h-[calc(100vh-68px)] mt-2"
+       [ngClass]="extendEditor === true ?'w-full':'w-96' ">
+    <app-editor-sidebar (addBlock)="addBlock($event)" [blocks]="blocks" [singleBlockMode]="singleBlockMode"
+                        (showEditorSidebar)="setShowEditorSidebar($event)"></app-editor-sidebar>
   </div>
 </div>

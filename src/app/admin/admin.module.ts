@@ -20,6 +20,10 @@ import { CustomBlocksListComponent } from './custom-blocks/custom-blocks-list/cu
 import { CustomBlocksCreateComponent } from './custom-blocks/custom-blocks-create/custom-blocks-create.component';
 import { CustomBlocksEditComponent } from './custom-blocks/custom-blocks-edit/custom-blocks-edit.component';
 import { CustomBlocksDesignComponent } from './custom-blocks/custom-blocks-design/custom-blocks-design.component';
+import { ManageTagsComponent } from './manage-tags/manage-tags.component';
+import { NewPageCreateComponent } from './page/new-page-create/new-page-create.component';
+import { NewPageEditComponent } from './page/new-page-edit/new-page-edit.component';
+import { NewPageListComponent } from './page/new-page-list/new-page-list.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import { CustomBlocksDesignComponent } from './custom-blocks/custom-blocks-desig
     CustomBlocksListComponent,
     CustomBlocksCreateComponent,
     CustomBlocksEditComponent,
-    CustomBlocksDesignComponent
+    CustomBlocksDesignComponent,
+    ManageTagsComponent,
+    NewPageCreateComponent,
+    NewPageEditComponent,
+    NewPageListComponent
   ],
   imports: [
     CommonModule,

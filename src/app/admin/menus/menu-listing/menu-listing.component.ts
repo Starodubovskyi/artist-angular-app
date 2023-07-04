@@ -14,6 +14,7 @@ export class MenuListingComponent implements OnInit, AfterViewInit {
   menus: Menu[] = [];
 
   toDeleteMenuId: null | string = null;
+  mainModal:string
 
   @ViewChild('mainTree') mainTree: any;
   @ViewChild('footerTree') footerTree: any;

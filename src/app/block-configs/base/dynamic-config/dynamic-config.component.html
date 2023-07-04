@@ -12,7 +12,8 @@
       <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{config.label}}</label>
       <quill-editor
         [formControlName]="config.key"
-        class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" format="json"></quill-editor>
+        class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        format="json"></quill-editor>
     </div>
     <div *ngSwitchCase="'switch'">
       <label class="inline-flex relative items-center mb-4 cursor-pointer mt-3">
@@ -45,14 +46,30 @@
         <div [formGroupName]="i">
           <div class="flex justify-between items-center my-3">
             <span>Item {{i + 1}}</span>
+            <div>
             <button
               (click)="triggerRemoveItem(i)"
-              class="text-white bg-red-700 hover:bg-red-800  rounded-lg text-xs p-2"
+              class="text-white bg-red-700 hover:bg-red-800  rounded-lg text-xs p-2 mr-2"
               type="button">
               Remove
             </button>
+            <button
+              (click)="hideEditItem(i)"
+              class="text-white bg-blue-500 hover:bg-blue-600  rounded-lg text-xs p-2"
+              type="button">
+              <div class="flex"><p class="mr-2">Edit Item {{i+1}}</p>
+              <ng-container *ngIf="statusHiddenEditItems[i]; else elseBlock">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/> </svg>
+              </ng-container>
+              <ng-template #elseBlock>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/> </svg>
+              </ng-template>
+              </div>
+            </button>
+            </div>
           </div>
-          <div *ngFor="let itemConfig of config.configs" [ngSwitch]="itemConfig.controlType">
+          <div *ngFor="let itemConfig of config.configs" [ngSwitch]="itemConfig.controlType"
+               [ngClass]="{hidden:!statusHiddenEditItems[i]}">
             <div *ngSwitchCase="'input'">
               <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{itemConfig.label}}</label>
               <input

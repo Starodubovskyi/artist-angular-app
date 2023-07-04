@@ -1,0 +1,40 @@
+<h1></h1>
+<section class="text-gray-600 body-font">
+  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center justify-between">
+    <div class="flex-1">
+      <h1 class="title-font text-center block  text-4xl mb-40 font-medium text-gray-900">{{biography.firstName}} {{biography.lastName}}
+      </h1>
+      <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+        <p class="mb-8 leading-relaxed">
+          <strong>Data di nascita:</strong> {{biography.birthDate}}
+        </p>
+        <p class="mb-8 leading-relaxed">
+          <strong>Luogo di nascita: </strong> {{biography.birthLocality}},{{biography.birthCountry}}
+        </p>
+        <p class="mb-8 leading-relaxed">
+          <strong>Data di morte: </strong> {{biography.deathDate}}
+        </p>
+        <p class="mb-8 leading-relaxed">
+          <strong>Luogo di morte: </strong> {{biography.deathLocality}},{{biography.deathCountry}}
+        </p>
+      </div>
+    </div>
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+      <img width="720" class="object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600">
+    </div>
+  </div>
+</section>
+<section class="text-gray-600 body-font overflow-hidden">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="-my-8 divide-y-2 divide-gray-100">
+      <div class="py-8 flex flex-wrap md:flex-nowrap" *ngFor="let bio of biography.biographies">
+        <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+          <span class="font-semibold title-font text-gray-700">{{bio.startYear}}</span>
+        </div>
+        <div class="md:flex-grow">
+          <p class="leading-relaxed">{{bio.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

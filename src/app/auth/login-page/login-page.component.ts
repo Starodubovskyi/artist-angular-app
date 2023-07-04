@@ -38,7 +38,7 @@ export class LoginPageComponent implements OnInit {
     this.authService.login(email, password).subscribe({
       next: (response) => {
         this.authService.setSession(response);
-        this.router.navigate(['/admin/pages']);
+        this.router.navigate(['/admin/sections']);
       },
       error: () => {
         this.showFormErrorMessage = true;

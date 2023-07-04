@@ -4,6 +4,7 @@ import {ConfigBase} from "../../base/config-base";
 import {ConfigInput} from "../../base/config-input";
 import {ConfigItems} from "../../base/config-items";
 import {ConfigTextarea} from "../../base/config-textarea";
+import {ConfigFile} from "../../base/config-file";
 
 @Component({
   selector: 'app-content-v2-config',
@@ -66,6 +67,11 @@ export class ContentV2ConfigComponent implements OnInit, BlockConfigComponent {
             key: "content",
             label: "Content"
           }),
+          new ConfigFile({
+            key: "image",
+            value:this.data.image,
+            label: "Image"
+          })
         ]
       })
     ];

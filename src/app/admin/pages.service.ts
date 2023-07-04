@@ -14,17 +14,11 @@ export class PagesService {
 
   getAll() {
     return this.http.get<Page[]>(environment.apiUrl + '/v1/pages/manage-pages', {
-      headers: {
-        "ngrok-skip-browser-warning": "any",
-      }
     });
   }
 
   getPageById(pageId: string) {
     return this.http.get<Page>(environment.apiUrl + '/v1/pages/manage-pages/' + pageId, {
-      headers: {
-        "ngrok-skip-browser-warning": "any",
-      }
     });
   }
 
@@ -43,9 +37,6 @@ export class PagesService {
 
   getTags() {
     return this.http.get<any[]>(environment.apiUrl + '/v1/pages/manage-tags/', {
-      headers: {
-        "ngrok-skip-browser-warning": "any",
-      }
     });
   }
 }

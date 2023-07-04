@@ -1,15 +1,22 @@
 <footer class="p-4 bg-footer-bg md:p-8 lg:p-10 dark:bg-gray-800">
   <div class="mx-auto max-w-screen-xl text-center">
-    <a class="flex justify-center items-center text-2xl font-semibold text-footer-color dark:text-white" *ngIf="themeSettings && themeSettings.siteName">
-      {{themeSettings.siteName}}
-    </a>
-<!--    <p class="my-6 text-gray-500 dark:text-gray-400">Open-source library of over 400+ web components and interactive elements built for better web.</p>-->
-    <ul class="flex flex-wrap justify-center items-center mb-6 text-footer-color dark:text-white" *ngFor="let menuItem of menu; let i = index;">
+    <img [routerLink]="['/']" alt="team" class="cursor-pointer w-24 h-24 m-auto sm:object-position:center "
+         *ngIf="themeSettings && themeSettings.siteLogo; else siteName"
+         [src]="themeSettings.siteLogo">
+    <ng-template #siteName>
+      <a [routerLink]="['/']"
+         class="flex justify-center items-center text-2xl font-semibold text-footer-color dark:text-white"
+         *ngIf="themeSettings && themeSettings.siteName">
+        {{themeSettings.siteName}}
+      </a>
+    </ng-template>
+    <ul class="flex flex-wrap justify-center items-center mb-6 text-footer-color dark:text-white"
+        *ngFor="let menuItem of menu; let i = index;">
       <li>
-        <a  class="mr-4 hover:underline md:mr-6" [routerLink]="[menuItem.slug]">{{menuItem.label}}</a>
+        <a class="mr-4 hover:underline md:mr-6" [routerLink]="[menuItem.slug]">{{menuItem.label}}</a>
       </li>
       <li *ngFor="let item of menuItem.children">
-        <a class="mr-4 hover:underline md:mr-6"  [routerLink]="[item.slug]">{{item.label}}</a>
+        <a class="mr-4 hover:underline md:mr-6" [routerLink]="[item.slug]">{{item.label}}</a>
       </li>
     </ul>
   </div>

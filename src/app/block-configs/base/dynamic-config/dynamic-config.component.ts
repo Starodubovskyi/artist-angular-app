@@ -18,8 +18,15 @@ export class DynamicConfigComponent {
     return this.form.controls[this.config.key].valid;
   }
 
+  statusHiddenEditItems = []
+
+  hideEditItem(index) {
+    this.statusHiddenEditItems[index]=!this.statusHiddenEditItems[index]
+  }
+
   triggerAddItem() {
     this.addItem.emit(this.config.key);
+    this.statusHiddenEditItems.push(false)
   }
 
   triggerRemoveItem(index: number) {
@@ -27,6 +34,7 @@ export class DynamicConfigComponent {
       index,
       key: this.config.key
     });
+    this.statusHiddenEditItems.splice(index,1)
   }
 
   triggerFileUpload(event: Event, key: string = '', isNested: boolean = false, index: number = 0): null | void {

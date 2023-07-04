@@ -21,17 +21,11 @@ export class ThemeSettingsService {
 
   getSettings() {
     return this.http.get<ThemeSettings>(environment.apiUrl + '/v1/theme/theme-settings', {
-      headers: {
-        "ngrok-skip-browser-warning": "any",
-      }
     });
   }
 
   saveSettings(data: any) {
     return this.http.patch(environment.apiUrl + '/v1/theme/theme-settings', data, {
-      headers: {
-        "ngrok-skip-browser-warning": "any",
-      }
     });
   }
 

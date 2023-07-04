@@ -18,11 +18,19 @@ export class EditorSidebarComponent implements OnInit {
   @Input() singleBlockMode: boolean = false;
   @Output('addBlock') addBlockEventEmitter = new EventEmitter();
 
+  @Output() showEditorSidebar = new EventEmitter<boolean>();
   selectedBlock: Block | null = null;
 
   selectedBlockConfig: BlockConfig | null = null;
 
   showDrawer = false;
+
+  showEditor = false
+  setShowEditorSidebar() {
+    this.showEditor =  !this.showEditor
+    this.showEditorSidebar.emit(this.showEditor);
+  }
+
 
   sortableOptions = {
     onUpdate: () => {

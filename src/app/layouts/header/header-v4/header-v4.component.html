@@ -1,12 +1,17 @@
-<header [ngClass]="{fixed: themeSettings && themeSettings.header.fixed}" class="header bg-header-bg body-font right-0 left-0 z-50">
+<header [ngClass]="{sticky: themeSettings && themeSettings.header.fixed}"
+        class="header bg-header-bg body-font right-0 left-0 z-50 top-0">
   <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
     <a [routerLink]="['/']" class="flex title-font font-medium items-center mb-4 md:mb-0">
-      <span class="ml-3 text-xl">{{themeSettings ? themeSettings.siteName : ''}}</span>
+      <img alt="team" class="w-16 h-16 m-auto" *ngIf="themeSettings && themeSettings.siteLogo; else siteName"
+           [src]="themeSettings.siteLogo">
+      <ng-template #siteName>
+        <a class="ml-3 text-xl">{{themeSettings ? themeSettings.siteName : ''}}</a>
+      </ng-template>
     </a>
     <nav class="md:ml-auto flex flex-wrap items-center text-header-color justify-center">
       <app-nested-menu [menus]="themeSettings ? themeSettings.mainMenu : []"></app-nested-menu>
     </nav>
   </div>
 </header>
-<div class="pt-[80px]" *ngIf="themeSettings && themeSettings.header.fixed"></div>
+
 

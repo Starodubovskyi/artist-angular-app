@@ -19,7 +19,7 @@ export class GuestGuard implements CanActivate {
       return true;
     }
 
-    this.router.navigate(['/admin/pages']);
+    this.router.navigate(['/admin/sections']);
     return false;
   }
 
