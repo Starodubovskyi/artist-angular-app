@@ -18,7 +18,8 @@ export class MenuEditComponent implements OnInit, OnDestroy {
     keywords: new FormControl<string>('', [Validators.required]),
     description: new FormControl<string>('', [Validators.required]),
     public: new FormControl<boolean>(false),
-    image: new FormControl<string>('')
+    image: new FormControl<string>(''),
+    mtaCode: new FormControl<string>(''),
   });
 
   selectedPages: string[] = [];
@@ -49,7 +50,8 @@ export class MenuEditComponent implements OnInit, OnDestroy {
           keywords: currentMenuItem.keywords,
           description: currentMenuItem.description,
           public: currentMenuItem.public,
-          image: currentMenuItem.image
+          image: currentMenuItem.image,
+          mtaCode: currentMenuItem.mtaCode
         });
 
         this.isSystem = !!currentMenuItem.isSystem;

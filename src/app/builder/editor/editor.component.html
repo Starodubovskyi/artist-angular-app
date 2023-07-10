@@ -1,7 +1,7 @@
 <div
   class="flex z-10 fixed right-0 left-0 items-center justify-between p-3 text-base font-bold text-footer-color rounded-lg bg-gray-100 group"
 >
-  <button (click)="goBack()" class="ml-3 whitespace-nowrap w-auto text-black"> < back</button>
+  <a [routerLink]="['/admin/menus']" class="ml-3 whitespace-nowrap w-auto text-black"> < back</a>
   <h1 class="text-xl">{{pageTitle}}</h1>
   <button
     (click)="savePage()"

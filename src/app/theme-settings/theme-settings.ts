@@ -3,7 +3,8 @@ export interface MenuItem {
   label: string;
   slug: string;
   parentId?: string | null;
-  children?: MenuItem[] | []
+  children?: MenuItem[] | [];
+  visible?: boolean;
 }
 
 export interface ThemeSettings {

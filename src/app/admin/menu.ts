@@ -10,6 +10,7 @@ export interface Menu {
   pages: string[];
   isSystem: boolean;
   image: string;
+  mtaCode: string;
 }
 
 export interface PublicMenuPage {

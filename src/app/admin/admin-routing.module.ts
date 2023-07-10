@@ -28,16 +28,16 @@ const routes: Routes = [
       //   path: 'sections/create',
       //   component: PageCreateComponent
       // },
-      {
-        title: 'Page edit',
-        path: 'sections/:id/edit',
-        component: PageEditComponent
-      },
-      {
-        title: 'Pages listing',
-        path: 'sections',
-        component: PageListingComponent
-      },
+      // {
+      //   title: 'Page edit',
+      //   path: 'sections/:id/edit',
+      //   component: PageEditComponent
+      // },
+      // {
+      //   title: 'Pages listing',
+      //   path: 'sections',
+      //   component: PageListingComponent
+      // },
       {
         title: 'Menus listing',
         path: 'menus',

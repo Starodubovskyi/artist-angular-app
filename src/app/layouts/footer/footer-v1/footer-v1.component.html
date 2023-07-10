@@ -15,7 +15,7 @@
         <h2 class="title-font font-medium text-footer-color tracking-widest text-sm mb-3" [routerLink]="[menuItem.slug]">{{menuItem.label}}</h2>
         <nav class="list-none mb-10">
           <li *ngFor="let item of menuItem.children">
-            <a class="text-footer-color-600 hover:text-footer-color-900" [routerLink]="[item.slug]">{{item.label}}</a>
+            <a class="text-footer-color-600 hover:text-footer-color-900"  *ngIf="item.visible" [routerLink]="[item.slug]">{{item.label}}</a>
           </li>
         </nav>
       </div>

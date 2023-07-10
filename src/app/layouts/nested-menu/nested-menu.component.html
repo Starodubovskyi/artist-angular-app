@@ -5,7 +5,7 @@
 
 <ng-template #recursiveMenu let-isFirstLevel="isFirstLevel" let-width="width" let-menus>
   <li *ngFor="let menu of menus" class="menuItem relative z-1">
-    <ng-container *ngIf="menu.label">
+    <ng-container *ngIf="menu.label && menu.visible !== false">
       <a [routerLink]="menu.slug" class="hover:underline px-[15px] text-[15px] block">{{menu.label}}</a>
       <ng-container *ngIf="menu.children">
         <div [id]="menu.label"

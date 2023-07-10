@@ -35,7 +35,7 @@
             </h2>
           </li>
           <li *ngFor="let item of menuItem.children">
-            <a class="hover:underline" [routerLink]="[item.slug]">{{item.label}}</a>
+            <a class="hover:underline" *ngIf="item.visible !== false" [routerLink]="[item.slug]">{{item.label}}</a>
           </li>
         </nav>
       </div>
