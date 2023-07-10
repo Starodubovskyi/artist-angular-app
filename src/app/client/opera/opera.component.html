@@ -1,21 +1,18 @@
-<section class="text-gray-600 body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="text-center">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">{{opera.name}}</h1>
-      <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">{{opera.signaturePositions}}</p>
-    </div>
-  </div>
-</section>
+<div class="w-full">
+  <img src=" ./assets/images-opera/cover-image.png" style="width: inherit" alt="image"/>
+</div>
 <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto flex flex-wrap">
-    <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
+    <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden flex flex-col">
+      <h1 class="sm:text-3xl text-2xl font-extrabold title-font text-gray-900 mb-4">{{opera.name}}</h1>
+      <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 text-gray-500s">{{opera.signaturePositions}}</p>
       <img alt="feature" class="object-cover object-center h-full w-full" [src]="opera.frontImagePartialUrl">
     </div>
     <div class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center">
       <div class="flex flex-col mb-10 lg:items-start items-center">
         <div class="flex-grow">
-          <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Descrizione</h2>
-          <p class="leading-relaxed text-base">{{opera.longDescriptionAdults}}</p>
+          <h2 class="text-gray-900 text-lg title-font font-medium mb-3">Titolo Opera</h2>
+          <p class="leading-relaxed text-base">{{opera.shortDescription}}</p>
         </div>
       </div>
       <div class="flex flex-col mb-10 lg:items-start items-center">
@@ -45,15 +42,35 @@
     </div>
   </div>
 </section>
+<section class="text-black font-montserrat text-center">
+  <div class="container px-5 py-9 mx-auto bg-[#D9D9D9]	">
+    <h1 class="font-bold">
+      DESCRIZIONE NOTIZIE STORICO CRITICHE
+    </h1>
+    <p class="px-44 pt-10">{{opera.longDescriptionAdults}}</p>
+  </div>
+
+
+</section>
 <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto flex flex-wrap">
     <div class="flex w-full mb-20 flex-wrap">
       <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 lg:w-1/3 lg:mb-0 mb-4">Galeria</h1>
     </div>
     <div class="flex flex-wrap">
-        <div class="md:p-2 p-1 w-1/3" *ngFor="let artwork of opera.artworkPhotos">
-          <img alt="gallery" class="w-full object-cover h-full object-center block" [src]="artwork.imageDetailPartialUrl">
-        </div>
+      <div class="md:p-2 p-1 w-1/3" *ngFor="let artwork of opera.artworkPhotos">
+        <img alt="gallery" class="w-full object-cover h-full object-center block" [src]="artwork.imageDetailPartialUrl">
+      </div>
     </div>
+  </div>
+</section>
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto flex flex-row justify-between">
+    <a href="/esposizioni">
+    <img alt="gallery" class="w-[732px] h-[794px] object-cover h-full object-center block" src="assets/images-opera/espazioni.png">
+    </a>
+    <a href="/biblioteca">
+    <img alt="gallery" class="w-[732px] h-[794px] object-cover h-full object-center block" src="assets/images-opera/biblioteca.png">
+    </a>
   </div>
 </section>

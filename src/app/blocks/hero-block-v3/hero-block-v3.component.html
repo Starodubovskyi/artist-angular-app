@@ -1,21 +1,20 @@
-<section class="text-gray-600 body-font">
-  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+<section class="text-black body-font font-montserrat">
+  <div class="container mx-auto flex py-24 flex-col items-center md:flex md:items-center	md:justify-center md:flex-row">
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-      <img class="object-cover object-center rounded" alt="hero"
+      <img class=" object-cover object-center " alt="hero"
            [src]="data.image ? data.image :'https://dummyimage.com/720x600'">
+      <p class="pt-8 text-center text-black">{{data.imageDescription}}</p>
     </div>
     <div
-      class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">{{data.titleContent}}
+      class="lg:w-[775px] md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:text-left items-center text-center">
+      <h1 class="title-font sm:text-4xl text-3xl pb-16 font-medium text-gray-900">{{data.titleContent}}
       </h1>
       <div class="mb-8 leading-relaxed">
         <quill-view [content]="data.content" format="json"></quill-view>
       </div>
-      <div class="flex justify-center">
-        <a [routerLink]="[data.linkLeft]"
-           class="inline-flex text-white bg-primary-color border-0 py-2 px-6 focus:outline-none hover:bg-primary-color-900 rounded text-lg">{{data.textLeftButton}}</a>
-        <a [routerLink]="[data.linkRight]"
-           class="ml-4 inline-flex text-white bg-primary-color border-0 py-2 px-6 focus:outline-none hover:bg-primary-color-900 rounded text-lg">{{data.textRightButton}}</a>
+      <div class="flex justify-center" *ngFor="let item of data.items">
+        <a [routerLink]="[item.link]"
+           class=" mt-4 inline-flex text-white bg-primary-color border-0 py-2 px-6 focus:outline-none hover:bg-primary-color-900 rounded text-lg">{{item.textButton}}</a>
       </div>
     </div>
   </div>

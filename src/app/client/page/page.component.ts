@@ -37,9 +37,12 @@ export class PageComponent implements OnInit {
       next: (response) => {
         if (response.blocks) {
           this.blocks = response.blocks;
+          this.isListing = false;
+          this.list = [];
         } else {
           this.isListing = true;
           this.list = response.response;
+          this.blocks = [];
         }
       },
       error: () => {

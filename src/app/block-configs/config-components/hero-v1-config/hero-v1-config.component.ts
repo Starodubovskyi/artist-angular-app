@@ -15,6 +15,7 @@ export class HeroV1ConfigComponent {
     title: 'Hero V1',
     titleContent: 'Hero V1',
     content:"Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.",
+    imageDescription:'Image Description',
     items: [
       {
         textButton: 'Button',
@@ -46,6 +47,11 @@ export class HeroV1ConfigComponent {
         key: "image",
         value:this.data.image,
         label: "Image"
+      }),
+      new ConfigInput({
+        key: "imageDescription",
+        label: 'Description for the image',
+        value: this.data.imageDescription
       }),
       new ConfigItems({
         key: "items",

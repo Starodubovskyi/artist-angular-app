@@ -21,4 +21,21 @@ export class ArtistApiService {
   getSingleOpera(id) {
     return this.http.get<any>(environment.apiUrl + '/v1/opera/every-image/' + id);
   }
+
+  getExpositions() {
+    return this.http.get<any>(environment.apiUrl + '/v1/exposition');
+  }
+
+  getSingleExposition(id) {
+    return this.http.get<any>(environment.apiUrl + '/v1/exposition/' + id);
+  }
+
+  getAnthologies() {
+    return this.http.get<any>(environment.apiUrl + '/v1/anthology/list');
+  }
+
+  getCatalogs() {
+    return this.http.get<any>(environment.apiUrl + '/v1/catalog/list');
+  }
+
 }

@@ -6,6 +6,24 @@ module.exports = {
   ],
   theme: {
     extend: {
+      theme: {
+        fontWeight: {
+          thin: '100',
+          extralight: '200',
+          light: '300',
+          normal: '400',
+          medium: '500',
+          semibold: '600',
+          bold: '700',
+          extrabold: '800',
+          black: '900',
+        }
+      },
+      fontFamily: {
+        'montserrat': ['Montserrat'],
+        'raleway': ['Raleway'],
+        'garamond': ['Garamond']
+      },
       colors: {
         'primary-color': {
           DEFAULT: 'var(--primary-500)',
@@ -51,8 +69,20 @@ module.exports = {
         'header-bg': 'var(--header-background)',
         'header-color': 'var(--header-color)',
         'footer-bg': 'var(--footer-background)',
-        'footer-color': 'var(--footer-color)'
-      }
+        'footer-color': 'var(--footer-color)',
+        transparent: 'transparent',
+        current: 'currentColor',
+        'white': '#ffffff',
+        'purple': '#3f3cbb',
+        'midnight': '#121063',
+        'metal': '#565584',
+        'tahiti': '#3ab7bf',
+        'silver': '#ecebff',
+        'bubble-gum': '#ff77e9',
+        'bermuda': '#78dcca',
+        'black': '#000000',
+        'grey':'#F1F1F1',
+}
     },
   },
   plugins: [

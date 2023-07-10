@@ -4,6 +4,7 @@ import {ConfigBase} from "../../base/config-base";
 import {ConfigInput} from "../../base/config-input";
 import {ConfigItems} from "../../base/config-items";
 import {ConfigTextarea} from "../../base/config-textarea";
+import {ConfigFile} from "../../base/config-file";
 
 
 @Component({
@@ -48,6 +49,11 @@ export class FeatureV6ConfigComponent  {
             key: "title",
             label: "Title",
             value: this.data.title
+          }),
+          new ConfigFile({
+            key: "image",
+            value:this.data.image,
+            label: "Image"
           }),
           new ConfigTextarea({
             key: "content",

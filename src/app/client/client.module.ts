@@ -9,6 +9,11 @@ import { BiographyComponent } from './biography/biography.component';
 import { LayoutComponent } from './layout/layout.component';
 import { OperasComponent } from './operas/operas.component';
 import { OperaComponent } from './opera/opera.component';
+import { ExpositionsComponent } from './expositions/expositions.component';
+import {QuillViewComponent} from "ngx-quill";
+import { ExpositionComponent } from './exposition/exposition.component';
+import { AntologieComponent } from './antologie/antologie.component';
+import { CataloghiComponent } from './cataloghi/cataloghi.component';
 
 
 @NgModule({
@@ -18,14 +23,19 @@ import { OperaComponent } from './opera/opera.component';
     BiographyComponent,
     LayoutComponent,
     OperasComponent,
-    OperaComponent
+    OperaComponent,
+    ExpositionsComponent,
+    ExpositionComponent,
+    AntologieComponent,
+    CataloghiComponent
   ],
-    imports: [
-        CommonModule,
-        BlockRendererModule,
-        ClientRoutingModule,
-        LayoutsModule
-    ]
+  imports: [
+    CommonModule,
+    BlockRendererModule,
+    ClientRoutingModule,
+    LayoutsModule,
+    QuillViewComponent
+  ]
 })
 export class ClientModule {
 }

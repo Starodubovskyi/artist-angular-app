@@ -1,18 +1,18 @@
-<ul class="flex items-center gap-3">
+<ul class="flex items-center gap-3 z-1 flex-wrap">
   <ng-container *ngTemplateOutlet="recursiveMenu; context:{ $implicit: menus, isFirstLevel: true, width: 150 }">
   </ng-container>
 </ul>
 
 <ng-template #recursiveMenu let-isFirstLevel="isFirstLevel" let-width="width" let-menus>
-  <li *ngFor="let menu of menus" class="menuItem relative">
+  <li *ngFor="let menu of menus" class="menuItem relative z-1">
     <ng-container *ngIf="menu.label">
-      <a [routerLink]="menu.slug" class="hover:underline p-2 block">{{menu.label}}</a>
+      <a [routerLink]="menu.slug" class="hover:underline px-[15px] text-[15px] block">{{menu.label}}</a>
       <ng-container *ngIf="menu.children">
         <div [id]="menu.label"
-             [style]="'width:' + width + 'px;right:' + (isFirstLevel ? 0:width) + 'px'"
+             [style]="'width:max-content ;left:' + (isFirstLevel ? 0:width) + 'px'"
              [ngClass]="{'top-0': !isFirstLevel}"
-             class="nested-menu absolute z-10 bg-header-bg hidden">
-          <ul class="text-sm text-header-color">
+             class="nested-menu absolute z-20 bg-grey hidden pb-[20px] pt-2">
+          <ul class="text-sm font-medium text-black">
             <ng-container
               *ngTemplateOutlet="recursiveMenu; context:{ $implicit: menu.children, width: width }"></ng-container>
           </ul>

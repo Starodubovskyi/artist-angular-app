@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // apiUrl: 'https://artist-express-api.onrender.com'
-  apiUrl: 'https://4091-5-13-130-104.eu.ngrok.io'
+  apiUrl: 'http://localhost:3003'
+  // apiUrl: 'https://4091-5-13-130-104.eu.ngrok.io'
 };
 
 /*
