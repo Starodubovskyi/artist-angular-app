@@ -37,6 +37,7 @@ import {
 } from "./config-components/hero-image-full-config/hero-image-full-config.component";
 import {ImageBlockConfigComponent} from "./config-components/image-block-config/image-block-config.component";
 import {ContentV7ConfigComponent} from "./config-components/content-v7-config/content-v7-config.component";
+import {SocialV1ConfigComponent} from "./config-components/social-v1-config/social-v1-config.component";
 
 @Injectable({
   providedIn: 'root'
@@ -128,6 +129,8 @@ export class BlockConfigsMappingService {
         return TestimonialsV2ConfigComponent;
       case BlockTypes.TESTIMONIALS_V3:
         return TestimonialsV3ConfigComponent;
+      case BlockTypes.SOCIAL_V1:
+        return SocialV1ConfigComponent;
       case BlockTypes.IMAGE:
         return ImageBlockConfigComponent;
       default:

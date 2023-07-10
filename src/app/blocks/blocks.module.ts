@@ -39,6 +39,7 @@ import {RouterLink} from "@angular/router";
 import { HeroImageFullBlockComponent } from './hero-image-full-block/hero-image-full-block.component';
 import {FormsModule} from "@angular/forms";
 import { ContentBlockV7Component } from './content-block-v7/content-block-v7.component';
+import { SocialBlockComponent } from './social-block/social-block.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { ContentBlockV7Component } from './content-block-v7/content-block-v7.com
     TestimonialsBlockV3Component,
     HeroImageFullBlockComponent,
     ContentBlockV7Component,
+    SocialBlockComponent,
   ],
     imports: [
         CommonModule,

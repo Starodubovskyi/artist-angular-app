@@ -36,6 +36,7 @@ import {TestimonialsBlockV3Component} from "./testimonials-block-v3/testimonials
 import {ContentBlockV6Component} from "./content-block-v6/content-block-v6.component";
 import {HeroImageFullBlockComponent} from "./hero-image-full-block/hero-image-full-block.component";
 import {ContentBlockV7Component} from "./content-block-v7/content-block-v7.component";
+import {SocialBlockComponent} from "./social-block/social-block.component";
 
 @Injectable({
   providedIn: 'root'
@@ -126,6 +127,8 @@ export class BlocksMappingService {
         return TestimonialsBlockV2Component;
       case BlockTypes.TESTIMONIALS_V3:
         return TestimonialsBlockV3Component;
+      case BlockTypes.SOCIAL_V1:
+        return SocialBlockComponent;
       default:
         return TextBlockComponent;
     }

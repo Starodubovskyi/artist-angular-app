@@ -210,6 +210,11 @@ export class EditorSidebarComponent implements OnInit {
       type: BlockTypes.TESTIMONIALS_V3,
       title: 'TESTIMONIALS V3',
       image: "../../../assets/images-blocks/Testimonials V3.png"
+    },
+    {
+      type: BlockTypes.SOCIAL_V1,
+      title: 'SOCIAL V1',
+      image: "../../../assets/images-blocks/Social V1.png"
     }
   ];
 

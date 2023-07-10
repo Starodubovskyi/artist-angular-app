@@ -34,7 +34,6 @@ export class ExpositionComponent {
   fetchCurrentPage(id) {
     this.artistApiService.getSingleExposition(id).subscribe({
       next: (resp) => {
-        console.log(resp.response);
         this.exposition = resp.response;
       },
       error: () => {

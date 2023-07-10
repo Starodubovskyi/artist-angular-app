@@ -48,7 +48,6 @@ export class ExpositionsComponent {
       next: (response) => {
         this.artistApiService.getExpositions().subscribe({
           next: (resp) => {
-            console.log(resp.response);
             this.expositions = resp.response;
           },
           error: () => {
