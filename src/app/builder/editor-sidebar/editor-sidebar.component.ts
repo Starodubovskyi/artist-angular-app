@@ -215,6 +215,11 @@ export class EditorSidebarComponent implements OnInit {
       type: BlockTypes.SOCIAL_V1,
       title: 'SOCIAL V1',
       image: "../../../assets/images-blocks/Social V1.png"
+    },
+    {
+      type: BlockTypes.CAROUSEL_V1,
+      title: 'CAROUSEL V1',
+      image: "../../../assets/images-blocks/Social V1.png"
     }
   ];
 

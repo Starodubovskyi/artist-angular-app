@@ -40,6 +40,7 @@ import { HeroImageFullBlockComponent } from './hero-image-full-block/hero-image-
 import {FormsModule} from "@angular/forms";
 import { ContentBlockV7Component } from './content-block-v7/content-block-v7.component';
 import { SocialBlockComponent } from './social-block/social-block.component';
+import { CarouselBlockV1Component } from './carousel-block-v1/carousel-block-v1.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { SocialBlockComponent } from './social-block/social-block.component';
     HeroImageFullBlockComponent,
     ContentBlockV7Component,
     SocialBlockComponent,
+    CarouselBlockV1Component,
   ],
     imports: [
         CommonModule,

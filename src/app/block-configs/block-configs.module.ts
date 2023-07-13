@@ -47,6 +47,7 @@ import {QuillModule} from "ngx-quill";
 import { HeroImageFullConfigComponent } from './config-components/hero-image-full-config/hero-image-full-config.component';
 import { ContentV7ConfigComponent } from './config-components/content-v7-config/content-v7-config.component';
 import { SocialV1ConfigComponent } from './config-components/social-v1-config/social-v1-config.component';
+import { CarouselV1ConfigComponent } from './config-components/carousel-v1-config/carousel-v1-config.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { SocialV1ConfigComponent } from './config-components/social-v1-config/so
     HeroImageFullConfigComponent,
     ContentV7ConfigComponent,
     SocialV1ConfigComponent,
+    CarouselV1ConfigComponent,
   ],
   exports: [
     BlockConfigRenderDirective

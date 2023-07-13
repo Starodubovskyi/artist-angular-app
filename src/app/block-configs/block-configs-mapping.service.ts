@@ -38,6 +38,7 @@ import {
 import {ImageBlockConfigComponent} from "./config-components/image-block-config/image-block-config.component";
 import {ContentV7ConfigComponent} from "./config-components/content-v7-config/content-v7-config.component";
 import {SocialV1ConfigComponent} from "./config-components/social-v1-config/social-v1-config.component";
+import {CarouselV1ConfigComponent} from "./config-components/carousel-v1-config/carousel-v1-config.component";
 
 @Injectable({
   providedIn: 'root'
@@ -131,6 +132,8 @@ export class BlockConfigsMappingService {
         return TestimonialsV3ConfigComponent;
       case BlockTypes.SOCIAL_V1:
         return SocialV1ConfigComponent;
+      case BlockTypes.CAROUSEL_V1:
+        return CarouselV1ConfigComponent;
       case BlockTypes.IMAGE:
         return ImageBlockConfigComponent;
       default:

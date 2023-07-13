@@ -37,6 +37,7 @@ import {ContentBlockV6Component} from "./content-block-v6/content-block-v6.compo
 import {HeroImageFullBlockComponent} from "./hero-image-full-block/hero-image-full-block.component";
 import {ContentBlockV7Component} from "./content-block-v7/content-block-v7.component";
 import {SocialBlockComponent} from "./social-block/social-block.component";
+import {CarouselBlockV1Component} from "./carousel-block-v1/carousel-block-v1.component";
 
 @Injectable({
   providedIn: 'root'
@@ -129,6 +130,8 @@ export class BlocksMappingService {
         return TestimonialsBlockV3Component;
       case BlockTypes.SOCIAL_V1:
         return SocialBlockComponent;
+      case BlockTypes.CAROUSEL_V1:
+        return CarouselBlockV1Component;
       default:
         return TextBlockComponent;
     }

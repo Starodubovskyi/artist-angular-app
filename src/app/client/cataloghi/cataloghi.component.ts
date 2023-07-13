@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {MenusService} from "../../admin/menus.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {LoaderService} from "../../loader.service";
@@ -11,6 +11,17 @@ interface Catalog {
   publishMonth: string;
   publishDay: string;
   locale: string;
+  catalogPhotos: CatalogPhoto[]
+}
+
+interface CatalogPhoto {
+  id: number;
+  partialUrl: string;
+  catalogId: number;
+  locale: string;
+  title: string;
+  description: string;
+  url: string;
 }
 
 @Component({
