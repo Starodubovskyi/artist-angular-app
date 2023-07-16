@@ -14,6 +14,7 @@ import {QuillViewComponent} from "ngx-quill";
 import { ExpositionComponent } from './exposition/exposition.component';
 import { AntologieComponent } from './antologie/antologie.component';
 import { CataloghiComponent } from './cataloghi/cataloghi.component';
+import {BlocksModule} from "../blocks/blocks.module";
 
 
 @NgModule({
@@ -29,13 +30,14 @@ import { CataloghiComponent } from './cataloghi/cataloghi.component';
     AntologieComponent,
     CataloghiComponent
   ],
-  imports: [
-    CommonModule,
-    BlockRendererModule,
-    ClientRoutingModule,
-    LayoutsModule,
-    QuillViewComponent
-  ]
+    imports: [
+        CommonModule,
+        BlockRendererModule,
+        ClientRoutingModule,
+        LayoutsModule,
+        QuillViewComponent,
+        BlocksModule
+    ]
 })
 export class ClientModule {
 }

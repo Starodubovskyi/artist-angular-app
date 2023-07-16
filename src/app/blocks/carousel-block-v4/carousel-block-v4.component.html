@@ -1,0 +1,41 @@
+<section class="wrapper">
+  <div class="py-28">
+    <div *ngIf="contentItems && contentItems.length" class="carousel-container">
+      <div *ngFor="let item of contentItems; let i = index"
+           [ngClass]="{'div-active': selectedIndex === i}"
+           class="fade"
+      >
+        <div class="flex flex-row gap-10">
+          <div class="container">
+            <img [src]="item.image" alt="Snow">
+<!--            <button class="btn">Dettagli</button>-->
+          </div>
+          <div class="container">
+            <img [src]="i < contentItems.length -1  ? contentItems[i+1].image : contentItems[0].image" alt="Snow">
+<!--            <button class="btn">Dettagli</button>-->
+          </div>
+          <div class="container">
+            <img [src]="i < contentItems.length -2  ? contentItems[i+1+1].image : contentItems[i < contentItems.length -1 ? 0 : 1 ].image" alt="Snow">
+<!--            <button class="btn">Dettagli</button>-->
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="indicators" class="carousel-dot-container">
+    <span *ngFor="let dot of contentItems let i = index"
+          class="dot"
+          [ngClass]="{'active':selectedIndex === i}"
+          (click)="selectImage(i)"
+    >
+    </span>
+      </div>
+
+      <button *ngIf="controls" class="btn-carousel btn-prev" (click)="onPrevClick()">
+        <i class="icon-carousel icon-prev"><</i>
+      </button>
+      <button *ngIf="controls" class="btn-carousel btn-next" (click)="onNextClick()">
+        <i class=" icon-carousel icon-next">></i>
+      </button>
+    </div>
+  </div>
+</section>

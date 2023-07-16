@@ -7,7 +7,7 @@
     <section class="text-black body-font font-montserrat">
       <div class="container mx-auto flex py-8 md:py-24 flex-col items-center md:flex md:items-center	md:justify-center md:flex-row" [ngClass]="item.titleContent ? 'md:flex-row': 'md:flex-col' ">
         <h1 *ngIf="item.titleContent" class="title-font sm:text-4xl  text-[18px] pb-8 font-medium text-black-900 md:hidden">{{item.titleContent}}</h1>
-        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-5 md:mb-0">
+        <div class="lg:max-w-lg lg:w-full  w-5/6 mb-5 md:mb-0" [ngClass]="item.titleContent ? 'md:w-1/2': 'w-full' ">
           <img class=" object-cover object-center " alt="hero"
                [src]="item.image ? item.image :'https://dummyimage.com/720x600'">
           <p *ngIf="item.imageDescription" class="pt-6 text-center text-black md:block hidden ">{{item.imageDescription}}</p>

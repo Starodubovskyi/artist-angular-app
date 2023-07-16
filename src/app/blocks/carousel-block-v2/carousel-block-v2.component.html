@@ -1,0 +1,57 @@
+<section class="my-8 flex md:flex-row flex-col gap-10">
+  <h1 class="mobile">
+    TITOLO
+  </h1>
+  <div *ngIf="contentItems && contentItems.length" class="carousel-container w-3/12	">
+    <div *ngFor="let item of contentItems; let i = index"
+         [ngClass]="{'div-active': selectedIndex === i}"
+         class="fade"
+    >
+      <img alt="hero"
+           [src]="item.image ? item.image :'https://dummyimage.com/720x600'">
+      <button class="btn">Dettagli</button>
+      <div>
+        <h4>
+          Lorem Ipsum is simply
+          dummy text of the printing....saaaaaaaa
+        </h4>
+      </div>
+    </div>
+    <div *ngIf="indicators" class="carousel-dot-container">
+    <span *ngFor="let dot of contentItems let i = index"
+          class="dot"
+          [ngClass]="{'active':selectedIndex === i}"
+          (click)="selectImage(i)"
+    >
+    </span>
+    </div>
+
+    <button *ngIf="controls" class="btn-carousel btn-prev" (click)="onPrevClick()">
+      <i class="icon-carousel icon-prev"><</i>
+    </button>
+    <button *ngIf="controls" class="btn-carousel btn-next" (click)="onNextClick()">
+      <i class=" icon-carousel icon-next">></i>
+    </button>
+  </div>
+
+  <div class="w-full">
+    <h1 class="desktop">
+      TITOLO
+    </h1>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and
+      typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy
+      text ever since the 1500s, when an unknown printer
+      took a galley of type and scrambled it to make a
+      type specimen book.
+      It has survived not only five centuries, but also the leap into
+      electronic typesetting, remaining essentially unchanged.
+      It was popularised in the 1960s with the
+      release of Letraset sheets containing
+      Lorem Ipsum passages, and more recently with
+      desktop publishing software like Aldus PageMaker
+      including versions of Lorem Ipsum
+    </p>
+  </div>
+</section>

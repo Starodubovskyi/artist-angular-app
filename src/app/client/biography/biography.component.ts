@@ -18,6 +18,17 @@ interface Biography {
   deathCountry?: string;
   birthCountry?: string;
   birthLocality?: string;
+  otherPhotos?: OtherPhoto;
+}
+
+interface OtherPhoto {
+  id: number;
+  partialUrl: string;
+  artistId: number;
+  locale: string;
+  title: string;
+  description: string;
+  url: string;
 }
 
 @Component({
@@ -25,7 +36,7 @@ interface Biography {
   templateUrl: './biography.component.html',
   styleUrls: ['./biography.component.css']
 })
-export class BiographyComponent implements OnInit{
+export class BiographyComponent implements OnInit {
   biography: Biography = {};
   loaded: boolean = false;
   error: boolean = false;
@@ -51,8 +62,8 @@ export class BiographyComponent implements OnInit{
           next: (resp) => {
             this.biography = {
               ...resp.response,
-              deathDate: format(parseISO(resp.response.deathDate),  'yyyy-MM-dd'),
-              birthDate: format(parseISO(resp.response.birthDate),  'yyyy-MM-dd'),
+              deathDate: format(parseISO(resp.response.deathDate), 'yyyy-MM-dd'),
+              birthDate: format(parseISO(resp.response.birthDate), 'yyyy-MM-dd'),
             };
           },
           error: () => {

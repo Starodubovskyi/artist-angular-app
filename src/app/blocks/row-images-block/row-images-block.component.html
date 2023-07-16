@@ -1,0 +1,10 @@
+<section class="py-28">
+  <div class="container px-5 py-10 mx-auto grid grid-cols-2 md:grid-cols-3 gap-12" >
+  <div class="container" *ngFor="let items of displayData">
+    <img [src]="items.imageSrc ?items.imageSrc : 'assets/dummy-img/dummy-image-1.png'" [alt]="items.alt">
+    <a [href]="items.href ? items.href : '/' " class="btn">Dettagli</a>
+  </div>
+
+  </div>
+  <h1 *ngIf="data.length > 3 && displayData.length === 3" (click)="allData()">Vedi di piu'</h1>
+</section>

@@ -1,18 +1,17 @@
 /* Container needed to position the button. Adjust the width as needed */
-.container-image {
+.container {
   position: relative;
   width: 100%;
-  max-width: 453px;
 }
 
 /* Make the image responsive */
-.principal-image {
+.container img {
   width: 100%;
   height: auto;
 }
 
-/* Style the button and place it in the middle of the container-image/image */
-.container-image .btn {
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
   position: absolute;
   bottom: 5%;
   left: 50%;
@@ -24,12 +23,21 @@
   padding: 2px 17px;
   border: black solid 1px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
 }
 
-.container-image .btn:hover {
+.container .btn:hover {
   background-color: black;
   color: white;
 }
-
+h1{
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.015em;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+}

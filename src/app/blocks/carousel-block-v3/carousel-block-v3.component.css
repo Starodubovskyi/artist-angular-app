@@ -1,26 +1,27 @@
+.wrapper{
+  background-image: url("/assets/dummy-img/background-carousel-v3.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .carousel-container {
   position: relative;
   margin: auto;
   text-align: center;
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px #dce1e1;;
-}
-img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 85%;
+  padding: 50px 100px;
+  background: white;
 }
 
 .carousel-container > div {
   display: none;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 .carousel-container div.div-active {
   display: block;
   width: 100%;
-  height: 600px;
+  height:auto;
 }
 
 /* dots indicators*/
@@ -116,4 +117,49 @@ img{
 
 
 
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* Make the image responsive */
+.container img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+
+}
+
+/* Style the button and place it in the middle of the container/image */
+.container .btn {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 2px 17px;
+  border: black solid 1px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: black;
+  color: white;
+}
+h1{
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: -0.015em;
+  text-align: center;
+  text-decoration: underline;
+  cursor: pointer;
+}
 

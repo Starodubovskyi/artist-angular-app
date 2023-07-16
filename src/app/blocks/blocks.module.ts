@@ -41,6 +41,12 @@ import {FormsModule} from "@angular/forms";
 import { ContentBlockV7Component } from './content-block-v7/content-block-v7.component';
 import { SocialBlockComponent } from './social-block/social-block.component';
 import { CarouselBlockV1Component } from './carousel-block-v1/carousel-block-v1.component';
+import { TabPageBlockV1Component } from './tabpage-block-v1/tabpage-block-v1.component';
+import { CarouselBlockV2Component } from './carousel-block-v2/carousel-block-v2.component';
+import { RowImagesBlockComponent } from './row-images-block/row-images-block.component';
+import { CarouselBlockV3Component } from './carousel-block-v3/carousel-block-v3.component';
+import { CarouselBlockV4Component } from './carousel-block-v4/carousel-block-v4.component';
+import { CarouselBlockV5Component } from './carousel-block-v5/carousel-block-v5.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +87,12 @@ import { CarouselBlockV1Component } from './carousel-block-v1/carousel-block-v1.
     ContentBlockV7Component,
     SocialBlockComponent,
     CarouselBlockV1Component,
+    TabPageBlockV1Component,
+    CarouselBlockV2Component,
+    RowImagesBlockComponent,
+    CarouselBlockV3Component,
+    CarouselBlockV4Component,
+    CarouselBlockV5Component,
   ],
     imports: [
         CommonModule,
@@ -92,6 +104,9 @@ import { CarouselBlockV1Component } from './carousel-block-v1/carousel-block-v1.
   exports: [
     TextBlockComponent,
     ImageBlockComponent,
+    TabPageBlockV1Component,
+    RowImagesBlockComponent,
+    CarouselBlockV4Component,
   ],
   providers: [
 
