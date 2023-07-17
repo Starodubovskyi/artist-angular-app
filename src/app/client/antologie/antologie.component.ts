@@ -11,6 +11,7 @@ interface Anthology {
   dateMonth: string;
   dateDay: string;
   locale: string;
+  catalogPhotos: any[];
 }
 
 

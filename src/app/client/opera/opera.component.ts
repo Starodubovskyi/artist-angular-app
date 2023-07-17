@@ -14,8 +14,8 @@ export class OperaComponent {
   loaded: boolean = false;
   error: boolean = false;
   private sub: any;
-  backImages: any[];
-  frontImages: any[];
+  backImages: any[] = [];
+  frontImages: any[] = [];
 
   constructor(
     private menuService: MenusService,
